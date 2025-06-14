@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.handler.ArmorUtil;
 
 import api.hbm.item.IGasMask;
@@ -86,17 +86,17 @@ public class ArmorRegistry {
 			}
 		}
 		
-		if(ArmorModHandler.hasMods(stack)) {
-			
-			ItemStack[] mods = ArmorModHandler.pryMods(stack);
-			
-			for(ItemStack mod : mods) {
-				
-				//recursion! run the exact same procedure on every mod, in case future mods will have filter support
-				if(mod != null)
-					prot.addAll(getProtectionFromItem(mod));
-			}
-		}
+		// if(ArmorModHandler.hasMods(stack)) { // ArmorModHandler related code removed
+		//
+		// 	ItemStack[] mods = ArmorModHandler.pryMods(stack);
+		//
+		// 	for(ItemStack mod : mods) {
+		//
+		// 		//recursion! run the exact same procedure on every mod, in case future mods will have filter support
+		// 		if(mod != null)
+		// 			prot.addAll(getProtectionFromItem(mod));
+		// 	}
+		// }
 		
 		return prot;
 	}

@@ -1,7 +1,7 @@
 package com.hbm.items.tool;
 
 
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.items.ModItems;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.handler.ArmorUtil;
@@ -35,17 +35,17 @@ public class ItemFilter extends Item {
 		
 		if(!(helmet.getItem() instanceof IGasMask)) {
 			
-			if(ArmorModHandler.hasMods(helmet)) {
-				ItemStack[] mods = ArmorModHandler.pryMods(helmet);
-				
-				if(mods[ArmorModHandler.helmet_only] != null) {
-					ItemStack mask = mods[ArmorModHandler.helmet_only];
-					
-					ItemStack ret = installFilterOn(mask, stack, world, player);
-					ArmorModHandler.applyMod(helmet, mask);
-					return ActionResult.<ItemStack> newResult(EnumActionResult.SUCCESS, ret);
-				}
-			}
+			// if(ArmorModHandler.hasMods(helmet)) { // ArmorModHandler related code removed
+			// 	ItemStack[] mods = ArmorModHandler.pryMods(helmet);
+			//
+			// 	if(mods[ArmorModHandler.helmet_only] != null) {
+			// 		ItemStack mask = mods[ArmorModHandler.helmet_only];
+			//
+			// 		ItemStack ret = installFilterOn(mask, stack, world, player);
+			// 		ArmorModHandler.applyMod(helmet, mask);
+			// 		return ActionResult.<ItemStack> newResult(EnumActionResult.SUCCESS, ret);
+			// 	}
+			// }
 		}
 		
 		return ActionResult.<ItemStack> newResult(EnumActionResult.SUCCESS, installFilterOn(helmet, stack, world, player));

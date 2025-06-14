@@ -26,6 +26,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 
+//import com.hbm.handler.ArmorModHandler; // Removed
+
 public class ArmorUtil {
 
 	public static void register() {
@@ -267,13 +269,13 @@ public class ArmorUtil {
 		
 		if(!(mask.getItem() instanceof IGasMask)) {
 			
-			if(ArmorModHandler.hasMods(mask)) {
-				
-				ItemStack mods[] = ArmorModHandler.pryMods(mask);
-				
-				if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() instanceof IGasMask)
-					mask = mods[ArmorModHandler.helmet_only];
-			}
+			// if(ArmorModHandler.hasMods(mask)) { // ArmorModHandler related code removed
+			//
+			// 	ItemStack mods[] = ArmorModHandler.pryMods(mask);
+			//
+			// 	if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() instanceof IGasMask)
+			// 		mask = mods[ArmorModHandler.helmet_only];
+			// }
 		}
 		
 		if(mask != null)
@@ -283,14 +285,14 @@ public class ArmorUtil {
 	public static void damageGasMaskFilter(ItemStack mask, int damage) {
 		ItemStack filter = getGasMaskFilter(mask);
 		
-		if(filter == null) {
-			if(ArmorModHandler.hasMods(mask)) {
-				ItemStack mods[] = ArmorModHandler.pryMods(mask);
-				
-				if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() instanceof IGasMask)
-					filter = getGasMaskFilter(mods[ArmorModHandler.helmet_only]);
-			}
-		}
+		// if(filter == null) { // ArmorModHandler related code removed
+			// if(ArmorModHandler.hasMods(mask)) {
+			// 	ItemStack mods[] = ArmorModHandler.pryMods(mask);
+			//
+			// 	if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() instanceof IGasMask)
+			// 		filter = getGasMaskFilter(mods[ArmorModHandler.helmet_only]);
+			// }
+		// }
 		
 		if(filter == null || filter.getMaxDamage() == 0)
 			return;
@@ -380,13 +382,13 @@ public class ArmorUtil {
 			return true;
 		
 		ItemStack helmet = player.inventory.armorInventory.get(3);
-		if(helmet != null && ArmorModHandler.hasMods(helmet)) {
-			
-			ItemStack mods[] = ArmorModHandler.pryMods(helmet);
-			
-			if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() == ModItems.attachment_mask_mono)
-				return true;
-		}
+		// if(helmet != null && ArmorModHandler.hasMods(helmet)) { // ArmorModHandler related code removed
+		//
+		// 	ItemStack mods[] = ArmorModHandler.pryMods(helmet);
+		//
+		// 	if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() == ModItems.attachment_mask_mono)
+		// 		return true;
+		// }
 		
 		return false;
 	}
@@ -442,13 +444,13 @@ public class ArmorUtil {
 		
 		ItemStack filter = getGasMaskFilter(mask);
 		
-		if((filter == null || filter.isEmpty()) && ArmorModHandler.hasMods(mask)) {
-			
-			ItemStack mods[] = ArmorModHandler.pryMods(mask);
-			
-			if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() instanceof IGasMask)
-				filter = ((IGasMask)mods[ArmorModHandler.helmet_only].getItem()).getFilter(mods[ArmorModHandler.helmet_only]);
-		}
+		// if((filter == null || filter.isEmpty()) && ArmorModHandler.hasMods(mask)) { // ArmorModHandler related code removed
+		//
+		// 	ItemStack mods[] = ArmorModHandler.pryMods(mask);
+		//
+		// 	if(mods[ArmorModHandler.helmet_only] != null && mods[ArmorModHandler.helmet_only].getItem() instanceof IGasMask)
+		// 		filter = ((IGasMask)mods[ArmorModHandler.helmet_only].getItem()).getFilter(mods[ArmorModHandler.helmet_only]);
+		// }
 		
 		return filter;
 	}
@@ -491,7 +493,7 @@ public class ArmorUtil {
 	// 		return false;
 		
 	// 	if(mask.getItem() instanceof IGasMask) {
-	// 		return getGasMaskFilter(mask) == null;
+	// 		return getGasMaskFilter(mask) == null; // ArmorModHandler related code removed
 	// 	}
 		
 	// 	ItemStack mod = ArmorModHandler.pryMods(mask)[ArmorModHandler.helmet_only];

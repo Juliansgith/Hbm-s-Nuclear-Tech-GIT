@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import com.hbm.items.ModItems;
-import com.hbm.items.armor.ItemModCladding;
 import com.hbm.lib.Library;
 import com.hbm.potion.HbmPotion;
 
@@ -44,13 +43,14 @@ public class HazmatRegistry {
 		if (stack.hasTagCompound() && stack.getTagCompound().getFloat("hfr_cladding") > 0.0F) {
 			return stack.getTagCompound().getFloat("hfr_cladding");
 		} else {
-			if (ArmorModHandler.hasMods(stack)) {
-				ItemStack[] mods = ArmorModHandler.pryMods(stack);
-				ItemStack cladding = mods[5];
-				if (cladding != null && cladding.getItem() instanceof ItemModCladding) {
-					return (float)((ItemModCladding)cladding.getItem()).rad;
-				}
-			}
+			// ArmorModHandler.hasMods(stack) will be false if ItemModCladding is deleted as it's a mod
+			// if (ArmorModHandler.hasMods(stack)) {
+			// 	ItemStack[] mods = ArmorModHandler.pryMods(stack);
+			// 	ItemStack cladding = mods[5];
+			// 	if (cladding != null && cladding.getItem() instanceof ItemModCladding) {
+			// 		return (float)((ItemModCladding)cladding.getItem()).rad;
+			// 	}
+			// }
 
 			return 0.0F;
 		}
@@ -158,7 +158,7 @@ public class HazmatRegistry {
 
 		HazmatRegistry.registerHazmat(ModItems.bj_helmet, fixRounding(bj * helmet));
 		HazmatRegistry.registerHazmat(ModItems.bj_plate, fixRounding(bj * chest));
-		HazmatRegistry.registerHazmat(ModItems.bj_plate_jetpack, fixRounding(bj * chest));
+		//HazmatRegistry.registerHazmat(ModItems.bj_plate_jetpack, fixRounding(bj * chest)); // Item removed
 		HazmatRegistry.registerHazmat(ModItems.bj_legs, fixRounding(bj * legs));
 		HazmatRegistry.registerHazmat(ModItems.bj_boots, fixRounding(bj * boots));
 

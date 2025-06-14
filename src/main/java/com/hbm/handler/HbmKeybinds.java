@@ -17,7 +17,7 @@ public class HbmKeybinds {
 
 	public static final String category = "key.categories.hbm";
 	
-	public static KeyBinding jetpackKey = new KeyBinding(category + ".toggleBack", Keyboard.KEY_C, category);
+	//public static KeyBinding jetpackKey = new KeyBinding(category + ".toggleBack", Keyboard.KEY_C, category); // Removed
 	public static KeyBinding hudKey = new KeyBinding(category + ".toggleHUD", Keyboard.KEY_V, category);
 	public static KeyBinding reloadKey = new KeyBinding(category + ".reload", Keyboard.KEY_R, category);
 
@@ -28,7 +28,7 @@ public class HbmKeybinds {
 	public static KeyBinding craneLoadKey = new KeyBinding(category + ".craneLoad", Keyboard.KEY_RETURN, category);
 	
 	public static void register() {
-		ClientRegistry.registerKeyBinding(jetpackKey);
+		//ClientRegistry.registerKeyBinding(jetpackKey); // Removed
 		ClientRegistry.registerKeyBinding(hudKey);
 		ClientRegistry.registerKeyBinding(reloadKey);
 
@@ -56,8 +56,8 @@ public class HbmKeybinds {
 	}
 	
 	public static enum EnumKeybind {
-		JETPACK,
-		TOGGLE_JETPACK,
+		JETPACK, // This might also be unused now
+		//TOGGLE_JETPACK, // Removed
 		TOGGLE_HEAD,
 		RELOAD,
 		CRANE_UP,

@@ -13,10 +13,10 @@ import com.hbm.inventory.HeatRecipes;
 import com.hbm.inventory.FluidCombustionRecipes;
 import com.hbm.inventory.gui.GuiInfoContainer;
 import com.hbm.items.ModItems;
-import com.hbm.items.armor.JetpackBase;
+// import com.hbm.items.armor.JetpackBase; // Removed
 import com.hbm.items.machine.ItemFluidTank;
 import com.hbm.items.special.ItemCell;
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.items.tool.ItemFluidCanister;
 import com.hbm.items.tool.ItemGasCanister;
 import com.hbm.lib.Library;
@@ -568,33 +568,7 @@ public class FFUtils {
 			return fillItemAndMove(slots, slot1, slot2, tank, handler, contained, stack, true);
 		}
 
-		if(ArmorModHandler.hasMods(stack)){
-
-			ItemStack mod = ArmorModHandler.pryMod(stack, ArmorModHandler.plate_only);
-			boolean didFill = false;
-			if(!mod.isEmpty()){
-				if(mod.getItem() instanceof JetpackBase && ((JetpackBase)mod.getItem()).fuel == tank.getFluid().getFluid()) {
-
-					if(tank.getFluidAmount() > 0 && JetpackBase.getFuel(mod) < ((JetpackBase)mod.getItem()).maxFuel) {
-						FluidStack st = tank.drain(25, false);
-						int fill = st == null ? 0 : st.amount;
-						fill = Math.min(((JetpackBase)mod.getItem()).maxFuel-JetpackBase.getFuel(mod), fill);
-						if(fill > 0){
-							JetpackBase.setFuel(mod, JetpackBase.getFuel(mod) + fill);
-							tank.drain(fill, true);
-							if(JetpackBase.getFuel(mod) < ((JetpackBase)mod.getItem()).maxFuel) {
-								didFill = true;
-							}
-							ArmorModHandler.applyMod(stack, mod);
-						}
-					}
-				}
-			}
-			if(!didFill)
-				moveItems(slots, slot1, slot2, false);
-			else
-				return true;
-		}
+		// ArmorModHandler and JetpackBase related logic previously removed/commented.
 
 		return false;
 	}
@@ -841,20 +815,21 @@ public class FFUtils {
 			}
 		}
 
-		if(in.getItem() instanceof JetpackBase && ((JetpackBase)in.getItem()).fuel == tank.getFluid().getFluid()) {
-
-			if(tank.getFluidAmount() > 0 && JetpackBase.getFuel(in) < ((JetpackBase)in.getItem()).maxFuel) {
-				FluidStack st = tank.drain(25, false);
-				int fill = st == null ? 0 : st.amount;
-				JetpackBase.setFuel(in, Math.min(JetpackBase.getFuel(in) + fill, ((JetpackBase)in.getItem()).maxFuel));
-				tank.drain(fill, true);
-				if(JetpackBase.getFuel(in) >= ((JetpackBase)in.getItem()).maxFuel && out.isEmpty()) {
-					slots.setStackInSlot(slot2, in);
-					slots.setStackInSlot(slot1, ItemStack.EMPTY);
-				}
-				return true;
-			}
-		}
+		// Removed JetpackBase specific logic
+		// if(in.getItem() instanceof JetpackBase && ((JetpackBase)in.getItem()).fuel == tank.getFluid().getFluid()) {
+		//
+		// 	if(tank.getFluidAmount() > 0 && JetpackBase.getFuel(in) < ((JetpackBase)in.getItem()).maxFuel) {
+		// 		FluidStack st = tank.drain(25, false);
+		// 		int fill = st == null ? 0 : st.amount;
+		// 		JetpackBase.setFuel(in, Math.min(JetpackBase.getFuel(in) + fill, ((JetpackBase)in.getItem()).maxFuel));
+		// 		tank.drain(fill, true);
+		// 		if(JetpackBase.getFuel(in) >= ((JetpackBase)in.getItem()).maxFuel && out.isEmpty()) {
+		// 			slots.setStackInSlot(slot2, in);
+		// 			slots.setStackInSlot(slot1, ItemStack.EMPTY);
+		// 		}
+		// 		return true;
+		// 	}
+		// }
 
 		Item container = FluidContainerRegistry.getFullContainer(in.getItem(), tank.getFluid().getFluid());
 		if(container != null && container != Items.AIR) {

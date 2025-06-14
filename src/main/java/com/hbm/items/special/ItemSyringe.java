@@ -7,7 +7,7 @@ import com.hbm.capability.HbmLivingProps;
 import com.hbm.config.VersatileConfig;
 import com.hbm.forgefluid.ModForgeFluids;
 import com.hbm.items.ModItems;
-import com.hbm.items.armor.JetpackBase;
+//import com.hbm.items.armor.JetpackBase; // Removed
 import com.hbm.items.weapon.ItemGunBase;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.lib.ModDamageSource;
@@ -233,35 +233,36 @@ public class ItemSyringe extends Item {
         	}
 		}
 		
-		if(this == ModItems.jetpack_tank && player.inventory.armorInventory.get(2) != null && player.inventory.armorInventory.get(2).getItem() instanceof JetpackBase) {
-			if (!world.isRemote) {
-				ItemStack jetpack = player.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
-				JetpackBase jetItem = (JetpackBase) jetpack.getItem();
-
-            	if(jetItem.fuel != ModForgeFluids.KEROSENE)
-            		return super.onItemRightClick(world, player, hand);
-
-            	int fill = JetpackBase.getFuel(jetpack) + 1000;
-
-            	if(fill > jetItem.maxFuel)
-            		fill = jetItem.maxFuel;
-
-				if (JetpackBase.getFuel(jetpack) == fill)
-					return ActionResult.<ItemStack> newResult(EnumActionResult.SUCCESS, player.getHeldItem(hand));
-
-				JetpackBase.setFuel(jetpack, fill);
-				world.playSound(null, player.posX, player.posY, player.posZ, HBMSoundHandler.jetpackTank, SoundCategory.PLAYERS, 1.0F, 1.0F);
-				ItemStack stack = player.getHeldItem(hand);
-				stack.shrink(1);
-				if (stack.isEmpty())
-					player.setHeldItem(hand, ItemStack.EMPTY);
-				else {
-					ItemStack newStack = new ItemStack(stack.getItem(), stack.getCount(), stack.getMetadata());
-					newStack.setTagCompound(stack.getTagCompound());
-					player.setHeldItem(hand, newStack);
-				}
-			}
-		}
+		// Removed JetpackBase related logic as JetpackBase and jetpack_tank are being removed
+		// if(this == ModItems.jetpack_tank && player.inventory.armorInventory.get(2) != null && player.inventory.armorInventory.get(2).getItem() instanceof JetpackBase) {
+		// 	if (!world.isRemote) {
+		// 		ItemStack jetpack = player.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
+		// 		JetpackBase jetItem = (JetpackBase) jetpack.getItem();
+        //
+        //     	if(jetItem.fuel != ModForgeFluids.KEROSENE)
+        //     		return super.onItemRightClick(world, player, hand);
+        //
+        //     	int fill = JetpackBase.getFuel(jetpack) + 1000;
+        //
+        //     	if(fill > jetItem.maxFuel)
+        //     		fill = jetItem.maxFuel;
+        //
+		// 		if (JetpackBase.getFuel(jetpack) == fill)
+		// 			return ActionResult.<ItemStack> newResult(EnumActionResult.SUCCESS, player.getHeldItem(hand));
+        //
+		// 		JetpackBase.setFuel(jetpack, fill);
+		// 		world.playSound(null, player.posX, player.posY, player.posZ, HBMSoundHandler.jetpackTank, SoundCategory.PLAYERS, 1.0F, 1.0F);
+		// 		ItemStack stack = player.getHeldItem(hand);
+		// 		stack.shrink(1);
+		// 		if (stack.isEmpty())
+		// 			player.setHeldItem(hand, ItemStack.EMPTY);
+		// 		else {
+		// 			ItemStack newStack = new ItemStack(stack.getItem(), stack.getCount(), stack.getMetadata());
+		// 			newStack.setTagCompound(stack.getTagCompound());
+		// 			player.setHeldItem(hand, newStack);
+		// 		}
+		// 	}
+		// }
 		if(this == ModItems.gun_kit_1 || this == ModItems.gun_kit_2)
 		{
             if (!world.isRemote)

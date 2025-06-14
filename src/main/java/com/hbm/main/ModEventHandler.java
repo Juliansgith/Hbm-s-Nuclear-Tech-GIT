@@ -31,7 +31,7 @@ import com.hbm.entity.mob.EntityTaintedCreeper;
 import com.hbm.entity.projectile.EntityBurningFOEQ;
 import com.hbm.forgefluid.FFPipeNetwork;
 import com.hbm.potion.HbmDetox;
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.handler.ArmorUtil;
 import com.hbm.handler.BossSpawnHandler;
 import com.hbm.handler.EntityEffectHandler;
@@ -47,9 +47,7 @@ import com.hbm.inventory.AssemblerRecipes;
 import com.hbm.items.IEquipReceiver;
 import com.hbm.items.ModItems;
 import com.hbm.items.tool.ItemDigammaDiagnostic;
-import com.hbm.items.armor.ItemArmorMod;
-import com.hbm.items.armor.ItemModRevive;
-import com.hbm.items.armor.ItemModShackles;
+//import com.hbm.items.armor.ItemArmorMod; // Removed
 import com.hbm.items.gear.ArmorFSB;
 import com.hbm.items.special.ItemHot;
 import com.hbm.items.weapon.ItemGunBase;
@@ -230,15 +228,15 @@ public class ModEventHandler {
 	public void onItemToss(ItemTossEvent event){
 		ItemStack yeet = event.getEntityItem().getItem();
 		
-		if(yeet.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(yeet)) {
-			
-			ItemStack[] mods = ArmorModHandler.pryMods(yeet);
-			ItemStack cladding = mods[ArmorModHandler.cladding];
-			
-			if(cladding != null && cladding.getItem() == ModItems.cladding_obsidian) {
-				event.getEntity().setEntityInvulnerable(true);
-			}
-		}
+		// if(yeet.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(yeet)) { // ArmorModHandler related code removed
+		//
+		// 	ItemStack[] mods = ArmorModHandler.pryMods(yeet);
+		// 	ItemStack cladding = mods[ArmorModHandler.cladding];
+		//
+		// 	if(cladding != null && cladding.getItem() == ModItems.cladding_obsidian) {
+		// 		event.getEntity().setEntityInvulnerable(true);
+		// 	}
+		// }
 		
 		if(yeet.getItem() == ModItems.bismuth_tool) {
 			event.getEntity().setEntityInvulnerable(true);
@@ -646,15 +644,15 @@ public class ModEventHandler {
 			
 			ItemStack armor = ent.getItemStackFromSlot(EntityEquipmentSlot.values()[i]);
 			
-			if(ArmorModHandler.hasMods(armor)) {
-				
-				for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
-					
-					if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-						((ItemArmorMod)mod.getItem()).modDamage(e, armor);
-					}
-				}
-			}
+			// if(ArmorModHandler.hasMods(armor)) { // ArmorModHandler related code removed
+			//
+			// 	for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
+			//
+			// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
+			// 			((ItemArmorMod)mod.getItem()).modDamage(e, armor);
+			// 		}
+			// 	}
+			// }
 		}
 	}
 
@@ -817,35 +815,35 @@ public class ModEventHandler {
 				
 				if(revive != null) {
 					
-					//Classic revive
-					if(revive.getItem() instanceof ItemModRevive) {
-						revive.setItemDamage(revive.getItemDamage() + 1);
+					// //Classic revive
+					// if(revive.getItem() instanceof ItemModRevive) {
+					// 	revive.setItemDamage(revive.getItemDamage() + 1);
 						
-						if(revive.getItemDamage() >= revive.getMaxDamage()) {
-							ArmorModHandler.removeMod(stack, ArmorModHandler.extra);
-						} else {
-							ArmorModHandler.applyMod(stack, revive);
-						}
+					// 	if(revive.getItemDamage() >= revive.getMaxDamage()) {
+					// 		ArmorModHandler.removeMod(stack, ArmorModHandler.extra);
+					// 	} else {
+					// 		ArmorModHandler.applyMod(stack, revive);
+					// 	}
 						
-						event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
-						event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 60, 99));
-						event.setCanceled(true);
-						return;
-					}
+					// 	event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
+					// 	event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 60, 99));
+					// 	event.setCanceled(true);
+					// 	return;
+					// }
 					
-					//Shackles
-					if(revive.getItem() instanceof ItemModShackles && HbmLivingProps.getRadiation(event.getEntityLiving()) < 1000F) {
+					// //Shackles
+					// if(revive.getItem() instanceof ItemModShackles && HbmLivingProps.getRadiation(event.getEntityLiving()) < 1000F) {
 						
-						revive.setItemDamage(revive.getItemDamage() + 1);
+					// 	revive.setItemDamage(revive.getItemDamage() + 1);
 						
-						int dmg = revive.getItemDamage();
-						ArmorModHandler.applyMod(stack, revive);
+					// 	int dmg = revive.getItemDamage();
+					// 	ArmorModHandler.applyMod(stack, revive);
 						
-						event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
-						HbmLivingProps.incrementRadiation(event.getEntityLiving(), dmg * dmg);
-						event.setCanceled(true);
-						return;
-					}
+					// 	event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
+					// 	HbmLivingProps.incrementRadiation(event.getEntityLiving(), dmg * dmg);
+					// 	event.setCanceled(true);
+					// 	return;
+					// }
 				}
 			}
 		}
@@ -939,35 +937,35 @@ public class ModEventHandler {
 			
 			if(reapply) {
 				
-				if(ArmorModHandler.hasMods(prev)) {
-					
-					for(ItemStack mod : ArmorModHandler.pryMods(prev)) {
-						
-						if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-							
-							Multimap<String, AttributeModifier> map = ((ItemArmorMod)mod.getItem()).getModifiers(EntityEquipmentSlot.values()[i], prev);
-							
-							if(map != null)
-								event.getEntityLiving().getAttributeMap().removeAttributeModifiers(map);
-						}
-					}
-				}
+				// if(ArmorModHandler.hasMods(prev)) { // ArmorModHandler related code removed
+				//
+				// 	for(ItemStack mod : ArmorModHandler.pryMods(prev)) {
+				//
+				// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
+				//
+				// 			Multimap<String, AttributeModifier> map = ((ItemArmorMod)mod.getItem()).getModifiers(EntityEquipmentSlot.values()[i], prev);
+				//
+				// 			if(map != null)
+				// 				event.getEntityLiving().getAttributeMap().removeAttributeModifiers(map);
+				// 		}
+				// 	}
+				// }
 			}
 			
-			if(ArmorModHandler.hasMods(armor)) {
-				
-				for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
-					
-					if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-						((ItemArmorMod)mod.getItem()).modUpdate(event.getEntityLiving(), armor);
-						HazardSystem.applyHazards(mod, event.getEntityLiving());
-						
-						if(reapply) {
-							
-							Multimap<String, AttributeModifier> map = ((ItemArmorMod)mod.getItem()).getModifiers(EntityEquipmentSlot.values()[i], armor);
-							
-							if(map != null)
-								event.getEntityLiving().getAttributeMap().applyAttributeModifiers(map);
+			// if(ArmorModHandler.hasMods(armor)) { // ArmorModHandler related code removed
+			//
+			// 	for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
+			//
+			// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
+			// 			((ItemArmorMod)mod.getItem()).modUpdate(event.getEntityLiving(), armor);
+			// 			HazardSystem.applyHazards(mod, event.getEntityLiving());
+			//
+			// 			if(reapply) {
+			//
+			// 				Multimap<String, AttributeModifier> map = ((ItemArmorMod)mod.getItem()).getModifiers(EntityEquipmentSlot.values()[i], armor);
+			//
+			// 				if(map != null)
+			// 					event.getEntityLiving().getAttributeMap().applyAttributeModifiers(map);
 						}
 					}
 				}

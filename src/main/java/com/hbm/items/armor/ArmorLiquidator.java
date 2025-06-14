@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 import com.google.common.collect.Multimap;
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.handler.ArmorUtil;
 import com.hbm.items.ModItems;
 import com.hbm.items.gear.ArmorFSB;
@@ -64,10 +64,10 @@ public class ArmorLiquidator extends ArmorFSB implements IGasMask {
 	@Override
 	public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) {
 		Multimap<String, AttributeModifier> map = super.getItemAttributeModifiers(equipmentSlot);
-		if(equipmentSlot == this.armorType){
-			map.put(SharedMonsterAttributes.KNOCKBACK_RESISTANCE.getName(), new AttributeModifier(ArmorModHandler.fixedUUIDs[this.armorType.getIndex()], "Armor modifier", 100D, 0));
-			map.put(SharedMonsterAttributes.MOVEMENT_SPEED.getName(), new AttributeModifier(ArmorModHandler.fixedUUIDs[this.armorType.getIndex()], "Armor modifier", (double) -0.1D, 1));
-		}
+		// if(equipmentSlot == this.armorType){ // ArmorModHandler.fixedUUIDs removed
+		// 	map.put(SharedMonsterAttributes.KNOCKBACK_RESISTANCE.getName(), new AttributeModifier(ArmorModHandler.fixedUUIDs[this.armorType.getIndex()], "Armor modifier", 100D, 0));
+		// 	map.put(SharedMonsterAttributes.MOVEMENT_SPEED.getName(), new AttributeModifier(ArmorModHandler.fixedUUIDs[this.armorType.getIndex()], "Armor modifier", (double) -0.1D, 1));
+		// }
 		return map;
 	}
 	

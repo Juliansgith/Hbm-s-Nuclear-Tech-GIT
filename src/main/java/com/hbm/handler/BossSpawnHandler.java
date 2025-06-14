@@ -171,18 +171,18 @@ public class BossSpawnHandler {
 						boolean strike = true;
 
 						ItemStack armor = p.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
-						if(armor != null && ArmorModHandler.hasMods(armor)) {
-							ItemStack mod = ArmorModHandler.pryMods(armor)[ArmorModHandler.helmet_only];
-							
-							if(mod != null) {
-								if(mod.getItem() == ModItems.protection_charm) {
-									repell = true;
-								}
-								if(mod.getItem() == ModItems.meteor_charm) {
-									strike = false;
-								}
-							}
-						}
+						// if(armor != null && ArmorModHandler.hasMods(armor)) { // ArmorModHandler related code removed
+						// 	ItemStack mod = ArmorModHandler.pryMods(armor)[ArmorModHandler.helmet_only];
+						//
+						// 	if(mod != null) {
+						// 		if(mod.getItem() == ModItems.protection_charm) {
+						// 			repell = true;
+						// 		}
+						// 		if(mod.getItem() == ModItems.meteor_charm) {
+						// 			strike = false;
+						// 		}
+						// 	}
+						// }
 
 						if(strike)
 							spawnMeteorAtPlayer(p, repell);

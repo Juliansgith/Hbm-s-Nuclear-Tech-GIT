@@ -573,9 +573,9 @@ import paulscode.sound.SoundSystemConfig;
 
 public class ClientProxy extends ServerProxy {
 	
-	public static KeyBinding jetpackActivate;
-	public static KeyBinding jetpackHover;
-	public static KeyBinding jetpackHud;
+	//public static KeyBinding jetpackActivate; // Removed
+	//public static KeyBinding jetpackHover; // Removed
+	//public static KeyBinding jetpackHud; // Removed
 	public static KeyBinding fsbFlashlight;
 
 	public static KeyBinding craneUpKey;
@@ -613,12 +613,12 @@ public class ClientProxy extends ServerProxy {
 		
 		HbmShaderManager.loadShaders();
 		
-		jetpackActivate = new KeyBinding("key.jetpack_activate", KeyConflictContext.IN_GAME, Keyboard.KEY_J, "key.categories.hbm");
-		ClientRegistry.registerKeyBinding(jetpackActivate);
-		jetpackHover = new KeyBinding("key.jetpack_hover", KeyConflictContext.IN_GAME, Keyboard.KEY_H, "key.categories.hbm");
-		ClientRegistry.registerKeyBinding(jetpackHover);
-		jetpackHud = new KeyBinding("key.jetpack_hud", KeyConflictContext.IN_GAME, Keyboard.KEY_U, "key.categories.hbm");
-		ClientRegistry.registerKeyBinding(jetpackHud);
+		//jetpackActivate = new KeyBinding("key.jetpack_activate", KeyConflictContext.IN_GAME, Keyboard.KEY_J, "key.categories.hbm"); // Removed
+		//ClientRegistry.registerKeyBinding(jetpackActivate); // Removed
+		//jetpackHover = new KeyBinding("key.jetpack_hover", KeyConflictContext.IN_GAME, Keyboard.KEY_H, "key.categories.hbm"); // Removed
+		//ClientRegistry.registerKeyBinding(jetpackHover); // Removed
+		//jetpackHud = new KeyBinding("key.jetpack_hud", KeyConflictContext.IN_GAME, Keyboard.KEY_U, "key.categories.hbm"); // Removed
+		//ClientRegistry.registerKeyBinding(jetpackHud); // Removed
 		fsbFlashlight = new KeyBinding("key.fsb_flashlight", KeyConflictContext.IN_GAME, Keyboard.KEY_NUMPAD6, "key.categories.hbm");
 		ClientRegistry.registerKeyBinding(fsbFlashlight);
 
@@ -2366,7 +2366,7 @@ public class ClientProxy extends ServerProxy {
 		GL11.glEndList();
 		ResourceManager.loadAnimatedModels();
 		Minecraft.getMinecraft().getRenderManager().getSkinMap().forEach((p, r) -> {
-			r.addLayer(new JetpackHandler.JetpackLayer());
+			//r.addLayer(new JetpackHandler.JetpackLayer()); // JetpackHandler removed
 			r.getMainModel().bipedBody.addChild(new EgonBackpackRenderer(r.getMainModel()));
 		});
 		

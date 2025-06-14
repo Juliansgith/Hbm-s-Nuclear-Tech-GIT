@@ -32,7 +32,7 @@ import com.hbm.flashlight.Flashlight;
 import com.hbm.forgefluid.SpecialContainerFillLists.EnumCanister;
 import com.hbm.forgefluid.SpecialContainerFillLists.EnumCell;
 import com.hbm.forgefluid.SpecialContainerFillLists.EnumGasCanister;
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.handler.HTTPHandler;
 import com.hbm.handler.HazmatRegistry;
 import com.hbm.handler.HbmShaderManager;
@@ -52,8 +52,8 @@ import com.hbm.inventory.RecipesCommon.NbtComparableStack;
 import com.hbm.inventory.gui.GUIArmorTable;
 import com.hbm.inventory.material.Mats;
 import com.hbm.items.ModItems;
-import com.hbm.items.armor.ItemArmorMod;
-import com.hbm.items.armor.JetpackBase;
+//import com.hbm.items.armor.ItemArmorMod; // Removed
+//import com.hbm.items.armor.JetpackBase; // Removed
 import com.hbm.items.gear.ArmorFSB;
 import com.hbm.items.gear.RedstoneSword;
 import com.hbm.items.machine.ItemAssemblyTemplate;
@@ -1048,20 +1048,20 @@ public class ModEventHandlerClient {
 			
 			ItemStack armor = player.inventory.armorItemInSlot(i);
 			
-			if(armor != null && ArmorModHandler.hasMods(armor)) {
-				
-				for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
-					
-					if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-						((ItemArmorMod)mod.getItem()).modRender(event, armor);
-					}
-				}
-			}
+			// if(armor != null && ArmorModHandler.hasMods(armor)) { // ArmorModHandler related code removed
+			//
+			// 	for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
+			//
+			// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
+			// 			((ItemArmorMod)mod.getItem()).modRender(event, armor);
+			// 		}
+			// 	}
+			// }
 			
 			//because armor that isn't ItemArmor doesn't render at all
-			if(armor != null && armor.getItem() instanceof JetpackBase) {
-				((ItemArmorMod)armor.getItem()).modRender(event, armor);
-			}
+			// if(armor != null && armor.getItem() instanceof JetpackBase) { // Removed JetpackBase specific rendering
+			// 	((ItemArmorMod)armor.getItem()).modRender(event, armor);
+			// }
 		}
 		GL11.glPopMatrix();
 	}
@@ -1887,29 +1887,29 @@ public class ModEventHandlerClient {
 		
 
 		/// ARMOR MODS ///
-		if(stack.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(stack)) {
-			
-			if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) && !(Minecraft.getMinecraft().currentScreen instanceof GUIArmorTable)) {
-				
-				list.add(TextFormatting.DARK_GRAY + "" + TextFormatting.ITALIC +"Hold <" +
-						TextFormatting.YELLOW + "" + TextFormatting.ITALIC + "LSHIFT" +
-						TextFormatting.DARK_GRAY + "" + TextFormatting.ITALIC + "> to display installed armor mods");
-				
-			} else {
-				
-				list.add(TextFormatting.YELLOW + "Mods:");
-				
-				ItemStack[] mods = ArmorModHandler.pryMods(stack);
-				
-				for(int i = 0; i < 8; i++) {
-					
-					if(mods[i] != null && mods[i].getItem() instanceof ItemArmorMod) {
-						
-						((ItemArmorMod)mods[i].getItem()).addDesc(list, mods[i], stack);
-					}
-				}
-			}
-		}
+		// if(stack.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(stack)) { // ArmorModHandler related code removed
+		//
+		// 	if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) && !(Minecraft.getMinecraft().currentScreen instanceof GUIArmorTable)) {
+		//
+		// 		list.add(TextFormatting.DARK_GRAY + "" + TextFormatting.ITALIC +"Hold <" +
+		// 				TextFormatting.YELLOW + "" + TextFormatting.ITALIC + "LSHIFT" +
+		// 				TextFormatting.DARK_GRAY + "" + TextFormatting.ITALIC + "> to display installed armor mods");
+		//
+		// 	} else {
+		//
+		// 		list.add(TextFormatting.YELLOW + "Mods:");
+		//
+		// 		ItemStack[] mods = ArmorModHandler.pryMods(stack);
+		//
+		// 		for(int i = 0; i < 8; i++) {
+		//
+		// 			if(mods[i] != null && mods[i].getItem() instanceof ItemArmorMod) {
+		//
+		// 				((ItemArmorMod)mods[i].getItem()).addDesc(list, mods[i], stack);
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 		/// NEUTRON RADS ///
 		ContaminationUtil.addNeutronRadInfo(stack, event.getEntityPlayer(), list, event.getFlags());

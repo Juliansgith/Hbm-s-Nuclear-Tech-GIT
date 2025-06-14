@@ -1224,21 +1224,21 @@ public class ItemRenderLibrary {
 				GlStateManager.shadeModel(GL11.GL_FLAT);
 			}
 		});
-		renderers.put(ModItems.jetpack_glider, new ItemRenderBase() {
-			@Override
-			public void renderInventory() {
-				GL11.glTranslated(-5, -6, 0);
-				GL11.glScaled(1.5, 1.5, 1.5);
-			}
+		// renderers.put(ModItems.jetpack_glider, new ItemRenderBase() {
+		// 	@Override
+		// 	public void renderInventory() {
+		// 		GL11.glTranslated(-5, -6, 0);
+		// 		GL11.glScaled(1.5, 1.5, 1.5);
+		// 	}
 			
-			@Override
-			public void renderCommon() {
-				bindTexture(ResourceManager.jetpack_tex);
-				 AnimationWrapper w = new AnimationWrapper(0, ResourceManager.jetpack_activate);
-			     ResourceManager.jetpack.controller.setAnim(w);
-				 ResourceManager.jetpack.renderAnimated(ResourceManager.jetpack_activate.length);
-			}
-		});
+		// 	@Override
+		// 	public void renderCommon() {
+		// 		bindTexture(ResourceManager.jetpack_tex);
+		// 		 AnimationWrapper w = new AnimationWrapper(0, ResourceManager.jetpack_activate);
+		// 	     ResourceManager.jetpack.controller.setAnim(w);
+		// 		 ResourceManager.jetpack.renderAnimated(ResourceManager.jetpack_activate.length);
+		// 	}
+		// });
 		renderers.put(Item.getItemFromBlock(ModBlocks.lamp_demon), new ItemRenderBase() {
 			public void renderInventory() {
 				GL11.glTranslated(0, -3, 0);

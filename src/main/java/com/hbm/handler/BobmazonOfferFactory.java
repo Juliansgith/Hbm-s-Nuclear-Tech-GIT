@@ -174,8 +174,8 @@ public class BobmazonOfferFactory {
 		special.add(new Offer(new ItemStack(ModItems.boy_kit), Requirement.HIDDEN, 35 * inflation));
 		special.add(new Offer(new ItemStack(ModItems.missile_kit), Requirement.HIDDEN, 60 * inflation));
 		special.add(new Offer(new ItemStack(ModItems.grenade_kit), Requirement.HIDDEN, 20 * inflation));
-		special.add(new Offer(new ItemStack(ModItems.jetpack_vector), Requirement.HIDDEN, 10 * inflation));
-		special.add(new Offer(new ItemStack(ModItems.jetpack_tank), Requirement.HIDDEN, 3 * inflation));
+		//special.add(new Offer(new ItemStack(ModItems.jetpack_vector), Requirement.HIDDEN, 10 * inflation)); // Item removed
+		//special.add(new Offer(new ItemStack(ModItems.jetpack_tank), Requirement.HIDDEN, 3 * inflation)); // Item removed
 		special.add(new Offer(new ItemStack(ModItems.gun_lever_action), Requirement.HIDDEN, 5 * inflation));
 		special.add(new Offer(new ItemStack(ModItems.ammo_20gauge, 24), Requirement.HIDDEN, 5 * inflation));
 		special.add(new Offer(new ItemStack(ModItems.ammo_20gauge_incendiary, 24), Requirement.HIDDEN, 7 * inflation));

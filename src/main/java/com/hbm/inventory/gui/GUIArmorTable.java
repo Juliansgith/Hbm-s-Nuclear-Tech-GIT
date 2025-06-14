@@ -1,6 +1,6 @@
 package com.hbm.inventory.gui;
 
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.inventory.container.ContainerArmorTable;
 import com.hbm.lib.RefStrings;
 
@@ -70,10 +70,7 @@ public class GUIArmorTable extends GuiContainer {
 		if(mod.isEmpty())
 			return;
 
-		if(ArmorModHandler.isApplicable(armor, mod)) {
-			this.drawTexturedModalRect(guiLeft + x, guiTop + y, 176, 34, 18, 18);
-		} else {
-			this.drawTexturedModalRect(guiLeft + x, guiTop + y, 176, 16, 18, 18);
-		}
+		// Always draw red indicator as ArmorModHandler.isApplicable is removed
+		this.drawTexturedModalRect(guiLeft + x, guiTop + y, 176, 16, 18, 18);
 	}
 }

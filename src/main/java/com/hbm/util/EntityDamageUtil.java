@@ -2,7 +2,7 @@ package com.hbm.util;
 
 import java.lang.reflect.Field;
 
-import com.hbm.handler.ArmorModHandler;
+//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.items.ModItems;
 
 import net.minecraft.entity.Entity;
@@ -57,13 +57,13 @@ public class EntityDamageUtil {
 				EntityPlayer player = (EntityPlayer) attacker;
 				ItemStack chestplate = player.inventory.armorInventory.get(2);
 				
-				if(chestplate != null && ArmorModHandler.hasMods(chestplate)) {
-					ItemStack[] mods = ArmorModHandler.pryMods(chestplate);
-					
-					if(mods[ArmorModHandler.extra] != null && mods[ArmorModHandler.extra].getItem() == ModItems.v1) {
-						return true;
-					}
-				}
+				// if(chestplate != null && ArmorModHandler.hasMods(chestplate)) { // ArmorModHandler related code removed
+				// 	ItemStack[] mods = ArmorModHandler.pryMods(chestplate);
+				//
+				// 	if(mods[ArmorModHandler.extra] != null && mods[ArmorModHandler.extra].getItem() == ModItems.v1) {
+				// 		return true;
+				// 	}
+				// }
 			}
 		}
 		

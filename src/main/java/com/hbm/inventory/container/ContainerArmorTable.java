@@ -1,7 +1,7 @@
 package com.hbm.inventory.container;
 
-import com.hbm.handler.ArmorModHandler;
-import com.hbm.items.armor.ItemArmorMod;
+//import com.hbm.handler.ArmorModHandler; // Removed
+//import com.hbm.items.armor.ItemArmorMod; // Removed
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -20,14 +20,16 @@ public class ContainerArmorTable extends Container {
 
 	public ContainerArmorTable(InventoryPlayer inventory) {
 		
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.helmet_only, 26, 27));	// helmet only
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.plate_only, 62, 27));		// chestplate only
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.legs_only, 98, 27));		// leggins only
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.boots_only, 134, 45));	// boots only
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.servos, 134, 81));		//servos/frame
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.cladding, 98, 99));		//radiation cladding
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.kevlar, 62, 99));			//kevlar/sapi/(ERA? :) )
-		this.addSlotToContainer(new UpgradeSlot(upgrades, ArmorModHandler.extra, 26, 99));			//special parts
+		// ArmorModHandler fields were removed, using placeholder indices (0-7) for now.
+		// This GUI will likely be non-functional or behave unexpectedly.
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 0, 26, 27));	// helmet only
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 1, 62, 27));		// chestplate only
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 2, 98, 27));		// leggins only
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 3, 134, 45));	// boots only
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 4, 134, 81));		//servos/frame
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 5, 98, 99));		//radiation cladding
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 6, 62, 99));			//kevlar/sapi/(ERA? :) )
+		this.addSlotToContainer(new UpgradeSlot(upgrades, 7, 26, 99));			//special parts
 
 		this.addSlotToContainer(new Slot(armor, 0, 44, 63) {
 
@@ -41,14 +43,17 @@ public class ContainerArmorTable extends Container {
 				
 				//when inserting a new armor piece, unload all mods to display
 				if(stack != null && !stack.isEmpty()) {
-					ItemStack[] mods = ArmorModHandler.pryMods(stack);
+					// ItemStack[] mods = ArmorModHandler.pryMods(stack); // ArmorModHandler.pryMods deleted
 					
+					// for(int i = 0; i < 8; i++) {
+					//
+					// 	if(mods != null)
+					// 		upgrades.setInventorySlotContents(i, mods[i]);
+					// }
+					// Simplified: clear upgrade slots if ArmorModHandler system is gone
 					for(int i = 0; i < 8; i++) {
-						
-						if(mods != null)
-							upgrades.setInventorySlotContents(i, mods[i]);
+						upgrades.setInventorySlotContents(i, ItemStack.EMPTY);
 					}
-					
 				}
 				
 				super.putStack(stack);
@@ -63,9 +68,9 @@ public class ContainerArmorTable extends Container {
 					ItemStack mod = upgrades.getStackInSlot(i);
 					
 					//ideally, this should always return true so long as the mod slot is not null due to the insert restriction
-					if(ArmorModHandler.isApplicable(stack, mod)) {
-						upgrades.setInventorySlotContents(i, ItemStack.EMPTY);
-					}
+					// if(ArmorModHandler.isApplicable(stack, mod)) { // ArmorModHandler.isApplicable deleted
+					// 	upgrades.setInventorySlotContents(i, ItemStack.EMPTY);
+					// }
 				}
 				return super.onTake(thePlayer, stack);
 			}
@@ -112,16 +117,16 @@ public class ContainerArmorTable extends Container {
 				if(var5.getItem() instanceof ItemArmor) {
 					if(!this.mergeItemStack(var5, 8, 9, false))
 						return ItemStack.EMPTY;
-				} else if(this.inventorySlots.get(8) != null && var5.getItem() instanceof ItemArmorMod) {
-					ItemArmorMod mod = (ItemArmorMod)var5.getItem();
-					int slot = mod.type;
-					
-					if(((Slot) this.inventorySlots.get(slot)).isItemValid(var5)) {
-						if(!this.mergeItemStack(var5, slot, slot + 1, false))
-							return ItemStack.EMPTY;
-					} else {
-						return ItemStack.EMPTY;
-					}
+				// } else if(this.inventorySlots.get(8) != null && var5.getItem() instanceof ItemArmorMod) { // ItemArmorMod logic removed
+				// 	ItemArmorMod mod = (ItemArmorMod)var5.getItem();
+				// 	int slot = mod.type;
+				//
+				// 	if(((Slot) this.inventorySlots.get(slot)).isItemValid(var5)) {
+				// 		if(!this.mergeItemStack(var5, slot, slot + 1, false))
+				// 			return ItemStack.EMPTY;
+				// 	} else {
+				// 		return ItemStack.EMPTY;
+				// 	}
 				} else {
 					return ItemStack.EMPTY;
 				}
@@ -147,7 +152,7 @@ public class ContainerArmorTable extends Container {
 
 				if(itemstack != null) {
 					player.dropItem(itemstack, false);
-					ArmorModHandler.removeMod(armor.getStackInSlot(0), i);
+					// ArmorModHandler.removeMod(armor.getStackInSlot(0), i); // ArmorModHandler.removeMod deleted
 				}
 			}
 			
