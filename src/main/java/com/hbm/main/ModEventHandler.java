@@ -31,7 +31,6 @@ import com.hbm.entity.mob.EntityTaintedCreeper;
 import com.hbm.entity.projectile.EntityBurningFOEQ;
 import com.hbm.forgefluid.FFPipeNetwork;
 import com.hbm.potion.HbmDetox;
-//import com.hbm.handler.ArmorModHandler; // Removed
 import com.hbm.handler.ArmorUtil;
 import com.hbm.handler.BossSpawnHandler;
 import com.hbm.handler.EntityEffectHandler;
@@ -47,7 +46,6 @@ import com.hbm.inventory.AssemblerRecipes;
 import com.hbm.items.IEquipReceiver;
 import com.hbm.items.ModItems;
 import com.hbm.items.tool.ItemDigammaDiagnostic;
-//import com.hbm.items.armor.ItemArmorMod; // Removed
 import com.hbm.items.gear.ArmorFSB;
 import com.hbm.items.special.ItemHot;
 import com.hbm.items.weapon.ItemGunBase;
@@ -227,16 +225,6 @@ public class ModEventHandler {
 	@SubscribeEvent
 	public void onItemToss(ItemTossEvent event){
 		ItemStack yeet = event.getEntityItem().getItem();
-		
-		// if(yeet.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(yeet)) { // ArmorModHandler related code removed
-		//
-		// 	ItemStack[] mods = ArmorModHandler.pryMods(yeet);
-		// 	ItemStack cladding = mods[ArmorModHandler.cladding];
-		//
-		// 	if(cladding != null && cladding.getItem() == ModItems.cladding_obsidian) {
-		// 		event.getEntity().setEntityInvulnerable(true);
-		// 	}
-		// }
 		
 		if(yeet.getItem() == ModItems.bismuth_tool) {
 			event.getEntity().setEntityInvulnerable(true);
@@ -604,7 +592,7 @@ public class ModEventHandler {
 	@SubscribeEvent
 	public void serverTick(ServerTickEvent e){
 		if(e.phase == Phase.START){
-			JetpackHandler.serverTick();
+			//JetpackHandler.serverTick(); // JetpackHandler removed
 			RTTYSystem.updateBroadcastQueue();
 		} else {
 			EntityHitDataHandler.updateSystem();
@@ -644,15 +632,6 @@ public class ModEventHandler {
 			
 			ItemStack armor = ent.getItemStackFromSlot(EntityEquipmentSlot.values()[i]);
 			
-			// if(ArmorModHandler.hasMods(armor)) { // ArmorModHandler related code removed
-			//
-			// 	for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
-			//
-			// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-			// 			((ItemArmorMod)mod.getItem()).modDamage(e, armor);
-			// 		}
-			// 	}
-			// }
 		}
 	}
 
@@ -735,7 +714,7 @@ public class ModEventHandler {
 			}
 		}
 		if(event.phase == Phase.END){
-			JetpackHandler.postPlayerTick(event.player);
+			//JetpackHandler.postPlayerTick(event.player); // JetpackHandler removed
 		}
 	}
 
@@ -937,39 +916,9 @@ public class ModEventHandler {
 			
 			if(reapply) {
 				
-				// if(ArmorModHandler.hasMods(prev)) { // ArmorModHandler related code removed
-				//
-				// 	for(ItemStack mod : ArmorModHandler.pryMods(prev)) {
-				//
-				// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-				//
-				// 			Multimap<String, AttributeModifier> map = ((ItemArmorMod)mod.getItem()).getModifiers(EntityEquipmentSlot.values()[i], prev);
-				//
-				// 			if(map != null)
-				// 				event.getEntityLiving().getAttributeMap().removeAttributeModifiers(map);
-				// 		}
-				// 	}
-				// }
 			}
 			
-			// if(ArmorModHandler.hasMods(armor)) { // ArmorModHandler related code removed
-			//
-			// 	for(ItemStack mod : ArmorModHandler.pryMods(armor)) {
-			//
-			// 		if(mod != null && mod.getItem() instanceof ItemArmorMod) {
-			// 			((ItemArmorMod)mod.getItem()).modUpdate(event.getEntityLiving(), armor);
-			// 			HazardSystem.applyHazards(mod, event.getEntityLiving());
-			//
-			// 			if(reapply) {
-			//
-			// 				Multimap<String, AttributeModifier> map = ((ItemArmorMod)mod.getItem()).getModifiers(EntityEquipmentSlot.values()[i], armor);
-			//
-			// 				if(map != null)
-			// 					event.getEntityLiving().getAttributeMap().applyAttributeModifiers(map);
-						}
-					}
-				}
-			}
+			// Stray braces removed here
 		}
 		
 		EntityEffectHandler.onUpdate(event.getEntityLiving());
@@ -1013,10 +962,10 @@ public class ModEventHandler {
 	public void clientJoinServer(PlayerLoggedInEvent e) {
 		if(e.player instanceof EntityPlayerMP playerMP){
             PacketDispatcher.sendTo(new AssemblerRecipeSyncPacket(AssemblerRecipes.recipeList, AssemblerRecipes.hidden), playerMP);
-			JetpackHandler.playerLoggedIn(e);
+			//JetpackHandler.playerLoggedIn(e); // JetpackHandler removed
 			IHBMData props = HbmCapability.getData(e.player);
 
-			PacketDispatcher.sendTo(new KeybindPacket(EnumKeybind.TOGGLE_JETPACK, props.getEnableBackpack()), playerMP);
+			//PacketDispatcher.sendTo(new KeybindPacket(EnumKeybind.TOGGLE_JETPACK, props.getEnableBackpack()), playerMP); // TOGGLE_JETPACK enum member removed
 			PacketDispatcher.sendTo(new KeybindPacket(EnumKeybind.TOGGLE_HEAD, props.getEnableHUD()), playerMP);
 			
 			if (GeneralConfig.enableWelcomeMessage) {
@@ -1049,12 +998,12 @@ public class ModEventHandler {
 	
 	@SubscribeEvent
 	public void worldLoad(WorldEvent.Load e) {
-		JetpackHandler.worldLoad(e);
+		//JetpackHandler.worldLoad(e); // JetpackHandler removed
 	}
 
 	@SubscribeEvent
 	public void worldSave(WorldEvent.Save e) {
-		JetpackHandler.worldSave(e);
+		//JetpackHandler.worldSave(e); // JetpackHandler removed
 	}
 
 	@SubscribeEvent
