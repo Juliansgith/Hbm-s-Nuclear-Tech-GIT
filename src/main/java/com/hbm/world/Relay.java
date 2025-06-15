@@ -665,7 +665,7 @@ public class Relay extends WorldGenerator
         WeightedRandomChestContentFrom1710.generateChestContents(rand, HbmChestContents.getLoot(1), (TileEntityCrateIron)world.getTileEntity(pos.setPos(x + 6, y + 0, z + 10)), 8);
 		
         if(world.rand.nextInt(5) == 0) {
-			((TileEntityCrateIron)world.getTileEntity(pos.setPos(x + 6, y + 0, z + 10))).inventory.setStackInSlot(11, new ItemStack(ModItems.morning_glory));
+			//((TileEntityCrateIron)world.getTileEntity(pos.setPos(x + 6, y + 0, z + 10))).inventory.setStackInSlot(11, new ItemStack(ModItems.morning_glory)); // Removed
 		}
         
         world.setBlockState(pos.setPos(x + 7, y + 0, z + 10), Blocks.BRICK_BLOCK.getDefaultState(), 3);

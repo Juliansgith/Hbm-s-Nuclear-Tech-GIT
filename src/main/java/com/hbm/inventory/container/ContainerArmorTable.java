@@ -172,22 +172,23 @@ public class ContainerArmorTable extends Container {
 
 		@Override
 		public boolean isItemValid(ItemStack stack) {
-			return armor.getStackInSlot(0) != null && ArmorModHandler.isApplicable(armor.getStackInSlot(0), stack) && ((ItemArmorMod)stack.getItem()).type == this.slotNumber;
+			//return armor.getStackInSlot(0) != null && ArmorModHandler.isApplicable(armor.getStackInSlot(0), stack) && ((ItemArmorMod)stack.getItem()).type == this.slotNumber; // ArmorModHandler & ItemArmorMod removed
+			return false;
 		}
 		
 		@Override
 		public void putStack(ItemStack stack) {
 			super.putStack(stack);
 			
-			if(stack != null) {
-				if(ArmorModHandler.isApplicable(armor.getStackInSlot(0), stack))
-					ArmorModHandler.applyMod(armor.getStackInSlot(0), stack);
-			}
+			//if(stack != null) { // ArmorModHandler removed
+			//	if(ArmorModHandler.isApplicable(armor.getStackInSlot(0), stack)) // ArmorModHandler removed
+			//		ArmorModHandler.applyMod(armor.getStackInSlot(0), stack); // ArmorModHandler removed
+			//}
 		}
 
 		@Override
 		public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
-			ArmorModHandler.removeMod(armor.getStackInSlot(0), this.slotNumber);
+			//ArmorModHandler.removeMod(armor.getStackInSlot(0), this.slotNumber); // ArmorModHandler removed
 			return super.onTake(thePlayer, stack);
 		}
 		

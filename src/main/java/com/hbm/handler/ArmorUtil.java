@@ -46,8 +46,8 @@ public class ArmorUtil {
 		ArmorRegistry.registerHazard(ModItems.goggles, HazardClass.LIGHT, HazardClass.SAND);
 		ArmorRegistry.registerHazard(ModItems.ashglasses, HazardClass.LIGHT, HazardClass.SAND);
 
-		ArmorRegistry.registerHazard(ModItems.attachment_mask, HazardClass.SAND);
-		ArmorRegistry.registerHazard(ModItems.spider_milk, HazardClass.LIGHT);
+		//ArmorRegistry.registerHazard(ModItems.attachment_mask, HazardClass.SAND);
+		//ArmorRegistry.registerHazard(ModItems.spider_milk, HazardClass.LIGHT);
 		
 		ArmorRegistry.registerHazard(ModItems.asbestos_helmet, HazardClass.SAND, HazardClass.LIGHT);
 		ArmorRegistry.registerHazard(ModItems.hazmat_helmet, HazardClass.SAND);
@@ -163,7 +163,7 @@ public class ArmorUtil {
 		}
 	}
 
-	public static boolean checkForFiend2(EntityPlayer player) {
+	/*public static boolean checkForFiend2(EntityPlayer player) {
 		
 		return ArmorUtil.checkArmorPiece(player, ModItems.jackt2, 2) && Library.checkForHeld(player, ModItems.shimmer_axe);
 	}
@@ -171,7 +171,7 @@ public class ArmorUtil {
 	public static boolean checkForFiend(EntityPlayer player) {
 		
 		return ArmorUtil.checkArmorPiece(player, ModItems.jackt, 2) && Library.checkForHeld(player, ModItems.shimmer_sledge);
-	}
+	}*/
 
 	public static boolean checkPAA(EntityLivingBase player){
 		return checkArmor(player, ModItems.paa_helmet, ModItems.paa_plate, ModItems.paa_legs, ModItems.paa_boots);

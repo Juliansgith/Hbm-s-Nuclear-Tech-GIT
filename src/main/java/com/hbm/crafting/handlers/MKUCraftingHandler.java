@@ -57,7 +57,7 @@ public class MKUCraftingHandler extends net.minecraftforge.registries.IForgeRegi
 				new ItemStack(ModItems.powder_fire),
 				new ItemStack(ModItems.dust),
 				new ItemStack(ModItems.nugget_mercury),
-				new ItemStack(ModItems.morning_glory),
+				//new ItemStack(ModItems.morning_glory), // Removed
 				new ItemStack(ModItems.syringe_metal_empty),
 				null,
 				null,

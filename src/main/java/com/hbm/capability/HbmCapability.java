@@ -48,14 +48,14 @@ public class HbmCapability {
 		public void setKeyPressed(EnumKeybind key, boolean pressed) {
 			if(!getKeyPressed(key) && pressed) {
 				
-				if(key == EnumKeybind.TOGGLE_JETPACK) {
+				/*if(key == EnumKeybind.TOGGLE_JETPACK) { // Removed
 					this.enableBackpack = !this.enableBackpack;
 					
 					if(this.enableBackpack)
 						MainRegistry.proxy.displayTooltip(TextFormatting.GREEN + "Jetpack ON");
 					else
 						MainRegistry.proxy.displayTooltip(TextFormatting.RED + "Jetpack OFF");
-				}
+				}*/
 				if(key == EnumKeybind.TOGGLE_HEAD) {
 					this.enableHUD = !this.enableHUD;
 					

@@ -192,9 +192,9 @@ public class ItemCustomLore extends Item {
 			list.add("Can be used with a screwdriver to pick locks.");
 			if(Minecraft.getMinecraft().player != null) {
 				EntityPlayer player = Minecraft.getMinecraft().player;
-				if(ArmorUtil.checkArmorPiece(player, ModItems.jackt, 2) || ArmorUtil.checkArmorPiece(player, ModItems.jackt2, 2))
-					list.add("Success rate of picking standard lock is 100%!");
-				else
+				//if(ArmorUtil.checkArmorPiece(player, ModItems.jackt, 2) || ArmorUtil.checkArmorPiece(player, ModItems.jackt2, 2))
+				//	list.add("Success rate of picking standard lock is 100%!");
+				//else
 					list.add("Success rate of picking standard lock is ~10%");
 			}
 		}
@@ -438,7 +438,7 @@ public class ItemCustomLore extends Item {
 			this == ModItems.powder_daffergon || 
 			this == ModItems.ingot_daffergon || 
 			
-			this == ModItems.bathwater_mk3 || 
+			//this == ModItems.bathwater_mk3 ||
 			this == ModItems.plate_euphemium ||  
 			this == ModItems.rod_euphemium ||  
 			this == ModItems.rod_quad_euphemium || 
@@ -490,9 +490,9 @@ public class ItemCustomLore extends Item {
 			return EnumRarity.RARE;
 		}
 
-		if(this == ModItems.bathwater_mk2 || 
+		if(//this == ModItems.bathwater_mk2 ||
 			this == ModItems.plate_paa || 
-			this == ModItems.cladding_paa || 
+			//this == ModItems.cladding_paa ||
 			this == ModItems.ammo_566_gold || 
 			this == ModItems.gun_revolver_cursed_ammo || 
 			this == ModItems.powder_power || 

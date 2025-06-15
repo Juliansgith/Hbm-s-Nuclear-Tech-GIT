@@ -73,7 +73,6 @@ import com.hbm.items.gear.ArmorT45;
 import com.hbm.items.gear.BigSword;
 import com.hbm.items.gear.HoeSchrabidium;
 import com.hbm.items.gear.MaskOfInfamy;
-import com.hbm.items.gear.ModArmor;
 import com.hbm.items.gear.ModHoe;
 import com.hbm.items.gear.ModSword;
 import com.hbm.items.gear.RedstoneSword;
@@ -575,9 +574,6 @@ public class ModItems {
 	public static final Item euphemium_plate = new ArmorEuphemium(MainRegistry.enumArmorMaterialEuphemium, -1, EntityEquipmentSlot.CHEST, "euphemium_plate").setMaxStackSize(1);
 	public static final Item euphemium_legs = new ArmorEuphemium(MainRegistry.enumArmorMaterialEuphemium, -1, EntityEquipmentSlot.LEGS, "euphemium_legs").setMaxStackSize(1);
 	public static final Item euphemium_boots = new ArmorEuphemium(MainRegistry.enumArmorMaterialEuphemium, -1, EntityEquipmentSlot.FEET, "euphemium_boots").setMaxStackSize(1);
-	
-	public static final Item jackt = new ModArmor(MainRegistry.enumArmorMaterialSteel, -1, EntityEquipmentSlot.CHEST, "jackt").setMaxStackSize(1);
-	public static final Item jackt2 = new ModArmor(MainRegistry.enumArmorMaterialSteel, -1, EntityEquipmentSlot.CHEST, "jackt2").setMaxStackSize(1);
 	
 
 	

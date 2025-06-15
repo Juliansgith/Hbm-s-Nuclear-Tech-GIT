@@ -197,9 +197,6 @@ public class HazmatRegistry {
 		HazmatRegistry.registerHazmat(ModItems.starmetal_legs, fixRounding(star * legs));
 		HazmatRegistry.registerHazmat(ModItems.starmetal_boots, fixRounding(star * boots));
 
-		HazmatRegistry.registerHazmat(ModItems.jackt, 0.1);
-		HazmatRegistry.registerHazmat(ModItems.jackt2, 0.1);
-
 		HazmatRegistry.registerHazmat(ModItems.gas_mask, 0.07);
 		HazmatRegistry.registerHazmat(ModItems.gas_mask_m65, 0.095);
 

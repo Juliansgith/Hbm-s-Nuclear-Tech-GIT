@@ -1,7 +1,7 @@
 package com.hbm.sound;
 
-import com.hbm.handler.JetpackHandler;
-import com.hbm.handler.JetpackHandler.JetpackInfo;
+//import com.hbm.handler.JetpackHandler; // JetpackHandler removed
+//import com.hbm.handler.JetpackHandler.JetpackInfo; // JetpackInfo removed
 
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,13 +26,13 @@ public class MovingSoundJetpack extends MovingSound {
 		this.xPosF = (float) player.posX;
 		this.yPosF = (float) player.posY;
 		this.zPosF = (float) player.posZ;
-		JetpackInfo j = JetpackHandler.get(player);
-		if(j != null){
-			this.volume = (float) Math.log(j.thrust*30+1)*0.25F;
+		//JetpackInfo j = JetpackHandler.get(player); // JetpackHandler removed
+		//if(j != null){ // JetpackHandler removed
+		//	this.volume = (float) Math.log(j.thrust*30+1)*0.25F;
 			//System.out.println(volume);
-		} else {
+		//} else { // JetpackHandler removed
 			this.donePlaying = true;
-		}
+		//} // JetpackHandler removed
 	}
 
 	public void end() {

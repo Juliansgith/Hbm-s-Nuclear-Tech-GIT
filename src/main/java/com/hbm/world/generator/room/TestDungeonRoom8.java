@@ -136,7 +136,7 @@ public class TestDungeonRoom8 extends CellularDungeonRoom {
 			ingred = ModItems.nugget_mercury;
 		} else if(r == 4) {
 			orig = bookFlower;
-			ingred = ModItems.morning_glory;
+			//ingred = ModItems.morning_glory; // Removed
 		} else {
 			orig = bookSyringe;
 			ingred = ModItems.syringe_metal_empty;

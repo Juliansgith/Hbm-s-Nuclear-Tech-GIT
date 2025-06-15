@@ -147,7 +147,7 @@ public class EntityMaskMan extends EntityMob implements IRadiationImmune {
 			
 			this.entityDropItem(mask, 0F);
 			this.dropItem(ModItems.coin_maskman, 1);
-			this.dropItem(ModItems.v1, 1);
+			//this.dropItem(ModItems.v1, 1); // Removed
 			this.dropItem(Items.SKULL, 1);
 		}
 	}

@@ -1,7 +1,7 @@
 package com.hbm.packet;
 
-import com.hbm.handler.JetpackHandler;
-import com.hbm.handler.JetpackHandler.JetpackInfo;
+//import com.hbm.handler.JetpackHandler; // JetpackHandler removed
+//import com.hbm.handler.JetpackHandler.JetpackInfo; // JetpackInfo removed
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
@@ -17,27 +17,27 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class JetpackSyncPacket implements IMessage {
 
 	int playerId;
-	JetpackInfo info;
+	//JetpackInfo info; // JetpackInfo removed
 
 	public JetpackSyncPacket() {
 	}
 
 	public JetpackSyncPacket(EntityPlayer player) {
 		playerId = player.getEntityId();
-		info = JetpackHandler.get(player);
+		//info = JetpackHandler.get(player); // JetpackHandler removed
 	}
 
 	@Override
 	public void fromBytes(ByteBuf buf) {
 		playerId = buf.readInt();
-		info = new JetpackInfo(false);
-		info.read(buf);
+		//info = new JetpackInfo(false); // JetpackInfo removed
+		//info.read(buf); // JetpackInfo removed
 	}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
 		buf.writeInt(playerId);
-		info.write(buf);
+		//info.write(buf); // JetpackInfo removed
 	}
 
 	public static class Handler implements IMessageHandler<JetpackSyncPacket, IMessage> {
@@ -46,12 +46,12 @@ public class JetpackSyncPacket implements IMessage {
 		public IMessage onMessage(JetpackSyncPacket message, MessageContext ctx) {
 			if(ctx.side == Side.SERVER) {
 				ctx.getServerHandler().player.server.addScheduledTask(() -> {
-					EntityPlayer player = ctx.getServerHandler().player;
-					JetpackInfo info = JetpackHandler.get(player);
-					if(info == null) {
-						JetpackHandler.put(player, info = new JetpackInfo(false));
-					}
-					JetpackHandler.put(player, message.info);
+					//EntityPlayer player = ctx.getServerHandler().player;
+					//JetpackInfo info = JetpackHandler.get(player); // JetpackHandler removed
+					//if(info == null) { // JetpackHandler removed
+					//	JetpackHandler.put(player, info = new JetpackInfo(false)); // JetpackHandler removed
+					//} // JetpackHandler removed
+					//JetpackHandler.put(player, message.info); // JetpackHandler removed
 				});
 			} else {
 				handleMessageClient(message, ctx);
@@ -65,13 +65,13 @@ public class JetpackSyncPacket implements IMessage {
 				World world = Minecraft.getMinecraft().world;
 				Entity ent = world.getEntityByID(m.playerId);
 				if(ent instanceof EntityPlayer) {
-					EntityPlayer player = (EntityPlayer) ent;
-					JetpackInfo info = JetpackHandler.get(player);
-					if(info == null) {
-						info = new JetpackInfo(true);
-						JetpackHandler.put(player, info);
-					}
-					info.setFromServer(m.info);
+					//EntityPlayer player = (EntityPlayer) ent;
+					//JetpackInfo info = JetpackHandler.get(player); // JetpackHandler removed
+					//if(info == null) { // JetpackHandler removed
+					//	info = new JetpackInfo(true); // JetpackInfo removed
+					//	JetpackHandler.put(player, info); // JetpackHandler removed
+					//} // JetpackHandler removed
+					//info.setFromServer(m.info); // JetpackInfo removed
 				}
 			});
 		}

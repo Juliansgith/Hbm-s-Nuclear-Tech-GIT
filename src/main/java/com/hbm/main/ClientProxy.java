@@ -206,7 +206,6 @@ import com.hbm.handler.BobmazonOfferFactory;
 import com.hbm.handler.HbmKeybinds;
 import com.hbm.handler.HbmKeybinds.EnumKeybind;
 import com.hbm.handler.HbmShaderManager;
-import com.hbm.handler.JetpackHandler;
 import com.hbm.items.ModItems;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.lib.RecoilHandler;
@@ -2122,7 +2121,7 @@ public class ClientProxy extends ServerProxy {
 
 		switch(key){
 		case JETPACK:			return Minecraft.getMinecraft().gameSettings.keyBindJump.isKeyDown();
-		case TOGGLE_JETPACK:	return HbmKeybinds.jetpackKey.isKeyDown();
+		//case TOGGLE_JETPACK:	return HbmKeybinds.jetpackKey.isKeyDown(); // Removed
 		case TOGGLE_HEAD:		return HbmKeybinds.hudKey.isKeyDown();
 		case RELOAD:			return HbmKeybinds.reloadKey.isKeyDown();
 		case CRANE_UP:			return HbmKeybinds.craneUpKey.isKeyDown();
