@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
-import com.hbm.items.weapon.ItemGunGauss;
 import com.hbm.main.ResourceManager;
 import com.hbm.particle.ParticleFirstPerson;
 import com.hbm.render.RenderHelper;
@@ -43,10 +42,6 @@ public class ParticleTauMuzzleLightning extends ParticleFirstPerson {
 		
 		if(this.particleAge >= this.particleMaxAge){
 			this.setExpired();
-			return;
-		}
-		if(ItemGunGauss.firstPersonFireCounter == -1){
-			particleAge = Math.max(particleAge, particleMaxAge-40);
 			return;
 		}
 		for(int i = 0; i < positions.size(); i ++){

@@ -89,9 +89,9 @@ public class KeybindPacket implements IMessage {
 		public void handleClient(MessageContext ctx, KeybindPacket m){
 			Minecraft.getMinecraft().addScheduledTask(() -> {
 				IHBMData props = HbmCapability.getData(Minecraft.getMinecraft().player);
-				if(EnumKeybind.values()[m.key] == EnumKeybind.TOGGLE_JETPACK) {
-					props.setEnableBackpack(m.pressed);
-				}
+				//if(EnumKeybind.values()[m.key] == EnumKeybind.TOGGLE_JETPACK) {
+				//	props.setEnableBackpack(m.pressed);
+				//}
 				if(EnumKeybind.values()[m.key] == EnumKeybind.TOGGLE_HEAD) {
 					props.setEnableHUD(m.pressed);
 				}

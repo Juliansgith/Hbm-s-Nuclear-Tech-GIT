@@ -163,9 +163,7 @@ import com.hbm.items.weapon.ItemGunBase;
 import com.hbm.items.weapon.ItemGunCCPlasmaCannon;
 import com.hbm.items.weapon.ItemGunDart;
 import com.hbm.items.weapon.ItemGunEgon;
-import com.hbm.items.weapon.ItemGunGauss;
 import com.hbm.items.weapon.ItemGunJShotty;
-import com.hbm.items.weapon.ItemGunLacunae;
 import com.hbm.items.weapon.ItemGunOSIPR;
 import com.hbm.items.weapon.ItemGunShotty;
 import com.hbm.items.weapon.ItemGunVortex;
@@ -867,7 +865,6 @@ public class ModItems {
 	public static final Item gun_bf = new ItemGunBase(GunFatmanFactory.getBELConfig(), "gun_bf").setCreativeTab(MainRegistry.weaponTab);
 	
 	public static final Item gun_zomg = new ItemGunBase(GunEnergyFactory.getZOMGConfig(), "gun_zomg").setCreativeTab(MainRegistry.weaponTab);
-	public static final Item gun_xvl1456 = new ItemGunGauss(GunGaussFactory.getXVLConfig(), GunGaussFactory.getChargedConfig(), "gun_xvl1456").setCreativeTab(MainRegistry.weaponTab);
 	//Drillgon200: The SQUID!
 	public static final Item gun_hp = new GunHP("gun_hp").setCreativeTab(MainRegistry.weaponTab);
 	public static final Item gun_defabricator = new GunDefabricator("gun_defabricator").setCreativeTab(MainRegistry.weaponTab);

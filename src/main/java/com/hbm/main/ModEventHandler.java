@@ -233,17 +233,17 @@ public class ModEventHandler {
 	@SubscribeEvent
 	public void lootTableLoad(LootTableLoadEvent e){
 		//Drillgon200: Yeah we're doing this in code. Screw minecraft json.
-		if(CompatibilityConfig.modLoot){
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_VILLAGE_BLACKSMITH, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.armor_polish), 1, 1, 3));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_VILLAGE_BLACKSMITH, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.bathwater), 1, 1, 1));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_ABANDONED_MINESHAFT, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.bathwater), 1, 1, 1));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_ABANDONED_MINESHAFT, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.serum), 1, 1, 5));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_SIMPLE_DUNGEON, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.heart_piece), 1, 1, 1));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_DESERT_PYRAMID, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.heart_piece), 1, 1, 1));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_JUNGLE_TEMPLE, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.heart_piece), 1, 1, 1));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_SIMPLE_DUNGEON, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.scrumpy), 1, 1, 1));
-			addWeightedRandomToLootTable(e, LootTableList.CHESTS_DESERT_PYRAMID, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.scrumpy), 1, 1, 1));
-		}
+		//if(CompatibilityConfig.modLoot){
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_VILLAGE_BLACKSMITH, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.armor_polish), 1, 1, 3));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_VILLAGE_BLACKSMITH, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.bathwater), 1, 1, 1));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_ABANDONED_MINESHAFT, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.bathwater), 1, 1, 1));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_ABANDONED_MINESHAFT, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.serum), 1, 1, 5));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_SIMPLE_DUNGEON, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.heart_piece), 1, 1, 1));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_DESERT_PYRAMID, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.heart_piece), 1, 1, 1));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_JUNGLE_TEMPLE, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.heart_piece), 1, 1, 1));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_SIMPLE_DUNGEON, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.scrumpy), 1, 1, 1));
+		//	addWeightedRandomToLootTable(e, LootTableList.CHESTS_DESERT_PYRAMID, new WeightedRandomChestContentFrom1710(new ItemStack(ModItems.scrumpy), 1, 1, 1));
+		//}
 	}
 
 	private void addWeightedRandomToLootTable(LootTableLoadEvent e, ResourceLocation loc, WeightedRandomChestContentFrom1710 content){
@@ -267,21 +267,21 @@ public class ModEventHandler {
 	@SubscribeEvent
 	public void itemSmelted(PlayerEvent.ItemSmeltedEvent e) {
 		
-		if(!e.player.world.isRemote && e.smelting.getItem() == Items.IRON_INGOT && e.player.getRNG().nextInt(64) == 0) {
-			
-			if(!e.player.inventory.addItemStackToInventory(new ItemStack(ModItems.lodestone)))
-				e.player.dropItem(new ItemStack(ModItems.lodestone), false);
-			else
-				e.player.inventoryContainer.detectAndSendChanges();
-		}
-		
-		if(!e.player.world.isRemote && e.smelting.getItem() == ModItems.ingot_uranium && e.player.getRNG().nextInt(64) == 0) {
-			
-			if(!e.player.inventory.addItemStackToInventory(new ItemStack(ModItems.quartz_plutonium)))
-				e.player.dropItem(new ItemStack(ModItems.quartz_plutonium), false);
-			else
-				e.player.inventoryContainer.detectAndSendChanges();
-		}
+		//if(!e.player.world.isRemote && e.smelting.getItem() == Items.IRON_INGOT && e.player.getRNG().nextInt(64) == 0) {
+		//
+		//	if(!e.player.inventory.addItemStackToInventory(new ItemStack(ModItems.lodestone)))
+		//		e.player.dropItem(new ItemStack(ModItems.lodestone), false);
+		//	else
+		//		e.player.inventoryContainer.detectAndSendChanges();
+		//}
+		//
+		//if(!e.player.world.isRemote && e.smelting.getItem() == ModItems.ingot_uranium && e.player.getRNG().nextInt(64) == 0) {
+		//
+		//	if(!e.player.inventory.addItemStackToInventory(new ItemStack(ModItems.quartz_plutonium)))
+		//		e.player.dropItem(new ItemStack(ModItems.quartz_plutonium), false);
+		//	else
+		//		e.player.inventoryContainer.detectAndSendChanges();
+		//}
 	}
 
 	public boolean canWear(Entity entity){
@@ -758,73 +758,73 @@ public class ModEventHandler {
 			if(event.getSource() instanceof EntityDamageSource && ((EntityDamageSource)event.getSource()).getTrueSource() instanceof EntityPlayer
 					 && !(((EntityDamageSource)event.getSource()).getTrueSource() instanceof FakePlayer)) {
 				
-				if(event.getEntityLiving() instanceof EntitySpider && event.getEntityLiving().getRNG().nextInt(500) == 0) {
-					event.getEntityLiving().dropItem(ModItems.spider_milk, 1);
-				}
+				// if(event.getEntityLiving() instanceof EntitySpider && event.getEntityLiving().getRNG().nextInt(500) == 0) {
+				// 	event.getEntityLiving().dropItem(ModItems.spider_milk, 1);
+				// }
 				
-				if(event.getEntityLiving() instanceof EntityCaveSpider && event.getEntityLiving().getRNG().nextInt(100) == 0) {
-					event.getEntityLiving().dropItem(ModItems.serum, 1);
-				}
+				// if(event.getEntityLiving() instanceof EntityCaveSpider && event.getEntityLiving().getRNG().nextInt(100) == 0) {
+				// 	event.getEntityLiving().dropItem(ModItems.serum, 1);
+				// }
 				
-				if(event.getEntityLiving() instanceof EntityAnimal && event.getEntityLiving().getRNG().nextInt(500) == 0) {
-					event.getEntityLiving().dropItem(ModItems.bandaid, 1);
-				}
+				// if(event.getEntityLiving() instanceof EntityAnimal && event.getEntityLiving().getRNG().nextInt(500) == 0) {
+				// 	event.getEntityLiving().dropItem(ModItems.bandaid, 1);
+				// }
 				
-				if(event.getEntityLiving() instanceof IMob && event.getEntityLiving().getRNG().nextInt(1000) == 0) {
-					event.getEntityLiving().dropItem(ModItems.heart_piece, 1);
-				}
+				// if(event.getEntityLiving() instanceof IMob && event.getEntityLiving().getRNG().nextInt(1000) == 0) {
+				// 	event.getEntityLiving().dropItem(ModItems.heart_piece, 1);
+				// }
 				
-				if(event.getEntityLiving() instanceof EntityCyberCrab && event.getEntityLiving().getRNG().nextInt(500) == 0) {
-					event.getEntityLiving().dropItem(ModItems.wd40, 1);
-				}
+				// if(event.getEntityLiving() instanceof EntityCyberCrab && event.getEntityLiving().getRNG().nextInt(500) == 0) {
+				// 	event.getEntityLiving().dropItem(ModItems.wd40, 1);
+				// }
 			}
 		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onEntityDeathFirst(LivingDeathEvent event){
-		for(int i = 2; i < 6; i++) {
-			
-			ItemStack stack = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.values()[i]);
-			
-			if(stack != null && stack.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(stack)) {
-				
-				ItemStack revive = ArmorModHandler.pryMods(stack)[ArmorModHandler.extra];
-				
-				if(revive != null) {
-					
-					// //Classic revive
-					// if(revive.getItem() instanceof ItemModRevive) {
-					// 	revive.setItemDamage(revive.getItemDamage() + 1);
-						
-					// 	if(revive.getItemDamage() >= revive.getMaxDamage()) {
-					// 		ArmorModHandler.removeMod(stack, ArmorModHandler.extra);
-					// 	} else {
-					// 		ArmorModHandler.applyMod(stack, revive);
-					// 	}
-						
-					// 	event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
-					// 	event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 60, 99));
-					// 	event.setCanceled(true);
-					// 	return;
-					// }
-					
-					// //Shackles
-					// if(revive.getItem() instanceof ItemModShackles && HbmLivingProps.getRadiation(event.getEntityLiving()) < 1000F) {
-						
-					// 	revive.setItemDamage(revive.getItemDamage() + 1);
-						
-					// 	int dmg = revive.getItemDamage();
-					// 	ArmorModHandler.applyMod(stack, revive);
-						
-					// 	event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
-					// 	HbmLivingProps.incrementRadiation(event.getEntityLiving(), dmg * dmg);
-					// 	event.setCanceled(true);
-					// 	return;
-					// }
-				}
-			}
-		}
+		//for(int i = 2; i < 6; i++) {
+		//
+		//	ItemStack stack = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.values()[i]);
+		//
+		//	//if(stack != null && stack.getItem() instanceof ItemArmor && ArmorModHandler.hasMods(stack)) {
+		//	//
+		//	//	ItemStack revive = ArmorModHandler.pryMods(stack)[ArmorModHandler.extra];
+		//	//
+		//	//	if(revive != null) {
+		//	//
+		//	//		// //Classic revive
+		//	//		// if(revive.getItem() instanceof ItemModRevive) {
+		//	//		// 	revive.setItemDamage(revive.getItemDamage() + 1);
+		//	//
+		//	//		// 	if(revive.getItemDamage() >= revive.getMaxDamage()) {
+		//	//		// 		ArmorModHandler.removeMod(stack, ArmorModHandler.extra);
+		//	//		// 	} else {
+		//	//		// 		ArmorModHandler.applyMod(stack, revive);
+		//	//		// 	}
+		//	//
+		//	//		// 	event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
+		//	//		// 	event.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 60, 99));
+		//	//		// 	event.setCanceled(true);
+		//	//		// 	return;
+		//	//		// }
+		//	//
+		//	//		// //Shackles
+		//	//		// if(revive.getItem() instanceof ItemModShackles && HbmLivingProps.getRadiation(event.getEntityLiving()) < 1000F) {
+		//	//
+		//	//		// 	revive.setItemDamage(revive.getItemDamage() + 1);
+		//	//
+		//	//		// 	int dmg = revive.getItemDamage();
+		//	//		// 	ArmorModHandler.applyMod(stack, revive);
+		//	//
+		//	//		// 	event.getEntityLiving().setHealth(event.getEntityLiving().getMaxHealth());
+		//	//		// 	HbmLivingProps.incrementRadiation(event.getEntityLiving(), dmg * dmg);
+		//	//		// 	event.setCanceled(true);
+		//	//		// 	return;
+		//	//		// }
+		//	//	}
+		//	//}
+		//}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)

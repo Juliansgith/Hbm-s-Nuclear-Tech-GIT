@@ -239,13 +239,13 @@ public class WeaponSpecial extends ItemSword {
 	
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entity, int itemSlot, boolean isSelected) {
-		if(entity instanceof EntityPlayer) {
-    		if(ArmorUtil.checkForFiend((EntityPlayer) entity)) {
-    			AdvancementManager.grantAchievement(((EntityPlayer) entity), AdvancementManager.achFiend);
-    		} else if(ArmorUtil.checkForFiend2((EntityPlayer) entity)) {
-        		AdvancementManager.grantAchievement(((EntityPlayer) entity), AdvancementManager.achFiend2);
-        	}
-    	}
+		//if(entity instanceof EntityPlayer) {
+		//if(ArmorUtil.checkForFiend((EntityPlayer) entity)) {
+		//	AdvancementManager.grantAchievement(((EntityPlayer) entity), AdvancementManager.achFiend);
+		//} else if(ArmorUtil.checkForFiend2((EntityPlayer) entity)) {
+		//	AdvancementManager.grantAchievement(((EntityPlayer) entity), AdvancementManager.achFiend2);
+		//}
+	//}
 	}
 	
 	@Override

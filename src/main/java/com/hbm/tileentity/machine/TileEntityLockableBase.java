@@ -130,8 +130,8 @@ public class TileEntityLockableBase extends TileEntity {
 		
 		if(canPick) {
 			
-			if(ArmorUtil.checkArmorPiece(player, ModItems.jackt, 2) || ArmorUtil.checkArmorPiece(player, ModItems.jackt2, 2))
-				chanceOfSuccess *= 100D;
+			//if(ArmorUtil.checkArmorPiece(player, ModItems.jackt, 2) || ArmorUtil.checkArmorPiece(player, ModItems.jackt2, 2))
+			//	chanceOfSuccess *= 100D;
 			
 			double rand = player.world.rand.nextDouble() * 100;
 			

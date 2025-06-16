@@ -2,7 +2,6 @@ package com.hbm.render.item.weapon;
 
 import org.lwjgl.opengl.GL11;
 
-import com.hbm.items.weapon.ItemGunGauss;
 import com.hbm.lib.RefStrings;
 import com.hbm.main.ClientProxy;
 import com.hbm.main.MainRegistry;
@@ -51,7 +50,6 @@ public class ItemRenderXVL1456 extends TEISRBase {
 		case FIRST_PERSON_RIGHT_HAND:
 			double[] recoil = HbmAnimations.getRelevantTransformation("RECOIL", type == TransformType.FIRST_PERSON_RIGHT_HAND ? EnumHand.MAIN_HAND : EnumHand.OFF_HAND);
 			double[] spin = HbmAnimations.getRelevantTransformation("SPIN", type == TransformType.FIRST_PERSON_RIGHT_HAND ? EnumHand.MAIN_HAND : EnumHand.OFF_HAND);
-			spin = ItemGunGauss.getCharge(itemStackIn) > 0 ? spin : new double[]{0, 0, 0};
 			
 			GL11.glScaled(10, 10, 10);
 			GL11.glTranslated(-1.7 - recoil[2]*0.3 - spin[1], 0.4, -0.8);
@@ -62,7 +60,7 @@ public class ItemRenderXVL1456 extends TEISRBase {
 				GL11.glRotated(100, 0, 0, 1);
 				GL11.glRotated(180, 1, 0, 0);
 			}
-			swordModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F, (float)spin[0]*0.000006F*(ItemGunGauss.getCharge(itemStackIn)+MainRegistry.proxy.partialTicks()));
+			swordModel.render(null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0625F, (float)spin[0]*0.000006F*(MainRegistry.proxy.partialTicks()));
 			GL11.glGetFloat(GL11.GL_MODELVIEW_MATRIX, ClientProxy.AUX_GL_BUFFER2);
 			GL11.glLoadIdentity();
 			GL11.glGetFloat(GL11.GL_MODELVIEW_MATRIX, ClientProxy.AUX_GL_BUFFER);

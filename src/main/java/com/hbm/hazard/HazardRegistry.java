@@ -183,10 +183,10 @@ public class HazardRegistry {
 		
 		registerHazItem(nugget_unobtainium_greater, unof * nugget);
 		registerHazItem(billet_unobtainium, unof * billet);
-		registerHazItem(insert_du, u238 * block);
-		registerHazItem(insert_ferrouranium, ferro * 4);
-		registerHazItem(insert_polonium, 100F);
-		registerHazItem(insert_ghiorsium, gh336 * 4);
+		//registerHazItem(insert_du, u238 * block);
+		//registerHazItem(insert_ferrouranium, ferro * 4);
+		//registerHazItem(insert_polonium, 100F);
+		//registerHazItem(insert_ghiorsium, gh336 * 4);
 
 		HazardSystem.register(nugget_u238m2, makeData(UNSTABLE, 60F));
 		HazardSystem.register(new ItemStack(ingot_u238m2, 1, 0), makeData(UNSTABLE, 360F));
