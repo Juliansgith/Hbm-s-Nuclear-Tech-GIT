@@ -58,9 +58,9 @@ public class GunXVL1456 extends Item {
 			return;
 		
 		EntityPlayer player = (EntityPlayer)entityLiving;
-		if(player.getHeldItemMainhand() == stack && player.getHeldItemOffhand().getItem() == ModItems.gun_xvl1456){
-			player.getHeldItemOffhand().onPlayerStoppedUsing(worldIn, entityLiving, timeLeft);
-		}
+		//if(player.getHeldItemMainhand() == stack && player.getHeldItemOffhand().getItem() == ModItems.gun_xvl1456){
+		//	player.getHeldItemOffhand().onPlayerStoppedUsing(worldIn, entityLiving, timeLeft);
+		//}
 		int j = this.getMaxItemUseDuration(stack) - timeLeft;
 		
 		ArrowLooseEvent event = new ArrowLooseEvent(player, stack, worldIn, j, false);
@@ -118,9 +118,9 @@ public class GunXVL1456 extends Item {
 		if(!(player1 instanceof EntityPlayer))
 			return;
 		EntityPlayer player = (EntityPlayer)player1;
-		if(player.getHeldItemMainhand() == stack && player.getHeldItemOffhand().getItem() == ModItems.gun_xvl1456){
-			player.getHeldItemOffhand().getItem().onUsingTick(player.getHeldItemOffhand(), player, count);
-		}
+		//if(player.getHeldItemMainhand() == stack && player.getHeldItemOffhand().getItem() == ModItems.gun_xvl1456){
+		//	player.getHeldItemOffhand().getItem().onUsingTick(player.getHeldItemOffhand(), player, count);
+		//}
 		World world = player.world;
 		if (!player.isSneaking()) {
 			boolean flag = player.capabilities.isCreativeMode

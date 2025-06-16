@@ -2230,7 +2230,7 @@ public class ClientProxy extends ServerProxy {
 		ModItems.gun_mirv.setTileEntityItemStackRenderer(new ItemRenderMIRVLauncher());
 		ModItems.gun_bf.setTileEntityItemStackRenderer(new ItemRenderBFLauncher());
 		ModItems.gun_zomg.setTileEntityItemStackRenderer(new ItemRenderZOMG());
-		ModItems.gun_xvl1456.setTileEntityItemStackRenderer(new ItemRenderXVL1456());
+		//ModItems.gun_xvl1456.setTileEntityItemStackRenderer(new ItemRenderXVL1456());
 		ModItems.gun_hp.setTileEntityItemStackRenderer(new ItemRenderGunHP());
 		ModItems.gun_defabricator.setTileEntityItemStackRenderer(new ItemRenderGunDefab());
 		ModItems.gun_uboinik.setTileEntityItemStackRenderer(new ItemRenderUboinik());
@@ -2250,9 +2250,9 @@ public class ClientProxy extends ServerProxy {
 		ModItems.gun_dampfmaschine.setTileEntityItemStackRenderer(new ItemRenderBullshit());
 		ModItems.gun_calamity.setTileEntityItemStackRenderer(new ItemRenderCalamity());
 		ModItems.gun_calamity_dual.setTileEntityItemStackRenderer(new ItemRenderCalamity());
-		ModItems.gun_minigun.setTileEntityItemStackRenderer(new ItemRenderMinigun());
-		ModItems.gun_avenger.setTileEntityItemStackRenderer(new ItemRenderMinigun());
-		ModItems.gun_lacunae.setTileEntityItemStackRenderer(new ItemRenderMinigun());
+		//ModItems.gun_minigun.setTileEntityItemStackRenderer(new ItemRenderMinigun());
+		//ModItems.gun_avenger.setTileEntityItemStackRenderer(new ItemRenderMinigun());
+		//ModItems.gun_lacunae.setTileEntityItemStackRenderer(new ItemRenderMinigun());
 		ModItems.gun_bolt_action.setTileEntityItemStackRenderer(new ItemRenderGunAnim2());
 		ModItems.gun_bolt_action_green.setTileEntityItemStackRenderer(new ItemRenderGunAnim2());
 		ModItems.gun_lever_action_dark.setTileEntityItemStackRenderer(new ItemRenderGunAnim2());

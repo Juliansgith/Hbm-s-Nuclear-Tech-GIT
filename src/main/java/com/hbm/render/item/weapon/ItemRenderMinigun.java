@@ -28,12 +28,12 @@ public class ItemRenderMinigun extends TEISRBase {
 	@Override
 	public void renderByItem(ItemStack item) {
 		float f = ItemGunBase.readNBT(item, "rot");
-		if(item.getItem() == ModItems.gun_minigun)
-			Minecraft.getMinecraft().renderEngine.bindTexture(minigun_rl);
-		if(item.getItem() == ModItems.gun_avenger)
-			Minecraft.getMinecraft().renderEngine.bindTexture(avenger_rl);
-		if(item.getItem() == ModItems.gun_lacunae)
-			Minecraft.getMinecraft().renderEngine.bindTexture(lacunae_rl);
+		//if(item.getItem() == ModItems.gun_minigun)
+		//	Minecraft.getMinecraft().renderEngine.bindTexture(minigun_rl);
+		//if(item.getItem() == ModItems.gun_avenger)
+		//	Minecraft.getMinecraft().renderEngine.bindTexture(avenger_rl);
+		//if(item.getItem() == ModItems.gun_lacunae)
+		//	Minecraft.getMinecraft().renderEngine.bindTexture(lacunae_rl);
 		
 		switch(type){
 		case FIRST_PERSON_LEFT_HAND:

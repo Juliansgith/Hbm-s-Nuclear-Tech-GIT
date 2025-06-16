@@ -120,7 +120,7 @@ public class BobmazonOfferFactory {
 		weapons.add(new Offer(new ItemStack(ModItems.defuser), Requirement.OIL, 5 * inflation));
 		weapons.add(new Offer(new ItemStack(ModItems.gun_revolver), Requirement.ASSEMBLY, 15 * inflation));
 		weapons.add(new Offer(new ItemStack(ModItems.gun_revolver_nopip), Requirement.ASSEMBLY, 20 * inflation));
-		weapons.add(new Offer(new ItemStack(ModItems.gun_minigun), Requirement.OIL, 100 * inflation));
+		//weapons.add(new Offer(new ItemStack(ModItems.gun_minigun), Requirement.OIL, 100 * inflation));
 		weapons.add(new Offer(new ItemStack(ModItems.gun_panzerschreck), Requirement.ASSEMBLY, 95 * inflation));
 		weapons.add(new Offer(new ItemStack(ModItems.gun_hk69), Requirement.ASSEMBLY, 60 * inflation));
 		weapons.add(new Offer(new ItemStack(ModItems.gun_uzi), Requirement.OIL, 80 * inflation));

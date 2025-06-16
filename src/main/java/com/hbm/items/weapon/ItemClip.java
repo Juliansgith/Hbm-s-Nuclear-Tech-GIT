@@ -223,19 +223,21 @@ public class ItemClip extends Item {
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_50bmg, 16));
 			if(Library.hasInventoryItem(player.inventory, ModItems.gun_calamity_dual))
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_50bmg, 32));
-			if(Library.hasInventoryItem(player.inventory, ModItems.gun_minigun)) {
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-			}
-			if(Library.hasInventoryItem(player.inventory, ModItems.gun_avenger)) {
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-			}
-			if(Library.hasInventoryItem(player.inventory, ModItems.gun_lacunae)) {
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//if(Library.hasInventoryItem(player.inventory, ModItems.gun_minigun)) {
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//}
+			//if(Library.hasInventoryItem(player.inventory, ModItems.gun_avenger)) {
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//}
+			//if(Library.hasInventoryItem(player.inventory, ModItems.gun_lacunae)) {
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
 			}
 			if(Library.hasInventoryItem(player.inventory, ModItems.gun_rpg))
@@ -274,8 +276,8 @@ public class ItemClip extends Item {
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_20gauge_flechette, 12));
 			if(Library.hasInventoryItem(player.inventory, ModItems.gun_bolt_action_green))
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_20gauge_flechette, 12));
-			if(Library.hasInventoryItem(player.inventory, ModItems.gun_xvl1456))
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.gun_xvl1456_ammo, 40));
+			//if(Library.hasInventoryItem(player.inventory, ModItems.gun_xvl1456))
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.gun_xvl1456_ammo, 40));
 			if(Library.hasInventoryItem(player.inventory, ModItems.gun_osipr)) {
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.gun_osipr_ammo, 30));
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.gun_osipr_ammo2, 1));
