@@ -164,7 +164,6 @@ import com.hbm.items.weapon.ItemGunCCPlasmaCannon;
 import com.hbm.items.weapon.ItemGunDart;
 import com.hbm.items.weapon.ItemGunEgon;
 import com.hbm.items.weapon.ItemGunJShotty;
-import com.hbm.items.weapon.ItemGunOSIPR;
 import com.hbm.items.weapon.ItemGunShotty;
 import com.hbm.items.weapon.ItemGunVortex;
 import com.hbm.items.weapon.ItemMissile;
@@ -836,9 +835,6 @@ public class ModItems {
 	public static final Item gun_sauer = new ItemGunBase(Gun4GaugeFactory.getSauerConfig(), "gun_sauer").setCreativeTab(MainRegistry.weaponTab);
 	public static final Item gun_calamity = new ItemGunBase(Gun50BMGFactory.getCalamityConfig(), "gun_calamity").setCreativeTab(MainRegistry.weaponTab);
 	public static final Item gun_calamity_dual = new ItemGunBase(Gun50BMGFactory.getSaddleConfig(), "gun_calamity_dual").setCreativeTab(MainRegistry.weaponTab);
-	public static final Item gun_minigun = new ItemGunLacunae(Gun5mmFactory.get53Config(), "gun_minigun").setCreativeTab(MainRegistry.weaponTab);
-	public static final Item gun_avenger = new ItemGunLacunae(Gun5mmFactory.get57Config(), "gun_avenger").setCreativeTab(MainRegistry.weaponTab);
-	public static final Item gun_lacunae = new ItemGunLacunae(Gun5mmFactory.getLacunaeConfig(), "gun_lacunae").setCreativeTab(MainRegistry.weaponTab);
 	public static final Item gun_bolt_action = new ItemGunBase(Gun20GaugeFactory.getBoltConfig(), "gun_bolt_action").setCreativeTab(MainRegistry.weaponTab);
 	public static final Item gun_bolt_action_green = new ItemGunBase(Gun20GaugeFactory.getBoltGreenConfig(), "gun_bolt_action_green").setCreativeTab(MainRegistry.weaponTab);
 	public static final Item gun_uzi = new ItemGunBase(Gun22LRFactory.getUziConfig(), "gun_uzi").setCreativeTab(MainRegistry.weaponTab);
