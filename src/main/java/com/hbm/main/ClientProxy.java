@@ -607,7 +607,7 @@ public class ClientProxy extends ServerProxy {
 		if(!Minecraft.getMinecraft().getFramebuffer().isStencilEnabled())
 			Minecraft.getMinecraft().getFramebuffer().enableStencil();
 		
-		MinecraftForge.EVENT_BUS.register(new ModEventHandlerClient());
+		//MinecraftForge.EVENT_BUS.register(new ModEventHandlerClient());
 		AdvancedModelLoader.registerModelHandler(new HmfModelLoader());
 		
 		HbmShaderManager.loadShaders();
@@ -1044,7 +1044,7 @@ public class ClientProxy extends ServerProxy {
 
 	public static void registerItemRenderer(Item i, TileEntityItemStackRenderer render, IRegistry<ModelResourceLocation, IBakedModel> reg){
 		i.setTileEntityItemStackRenderer(render);
-		ModEventHandlerClient.swapModels(i, reg);
+		//ModEventHandlerClient.swapModels(i, reg);
 	}
 
 	@Override

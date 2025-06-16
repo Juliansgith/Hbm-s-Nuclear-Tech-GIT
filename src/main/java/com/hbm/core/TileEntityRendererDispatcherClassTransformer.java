@@ -12,7 +12,7 @@ import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import org.objectweb.asm.Type;
 
 import net.minecraft.launchwrapper.IClassTransformer;
@@ -55,8 +55,8 @@ public class TileEntityRendererDispatcherClassTransformer implements IClassTrans
 		for (MethodNode method : dispatcher.methods) {
 			if ((method.name.equals("render") || method.name.equals("func_203602_a")) && method.desc.equals("(Lnet/minecraft/tileentity/TileEntity;DDDFIF)V")) {
 				
-				method.instructions.insertBefore(method.instructions.get(2), new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onTileEntityRender", "(Lnet/minecraft/tileentity/TileEntity;)V", false));
-				method.instructions.insertBefore(method.instructions.get(2), new VarInsnNode(ALOAD, 1));
+				//method.instructions.insertBefore(method.instructions.get(2), new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onTileEntityRender", "(Lnet/minecraft/tileentity/TileEntity;)V", false));
+				//method.instructions.insertBefore(method.instructions.get(2), new VarInsnNode(ALOAD, 1));
 			}
 		}
 	}

@@ -2,7 +2,7 @@ package com.hbm.entity.particle;
 
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -117,7 +117,7 @@ public class ParticleContrail extends Particle {
 	public void renderParticle(BufferBuilder buffer, Entity entityIn, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
 		
 		this.theRenderEngine.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-		this.particleTexture = ModEventHandlerClient.contrail;
+		//this.particleTexture = ModEventHandlerClient.contrail;
 		float f = (float) this.particleTextureIndexX / 16.0F;
 		float f1 = f + 0.0624375F;
 		float f2 = (float) this.particleTextureIndexY / 16.0F;

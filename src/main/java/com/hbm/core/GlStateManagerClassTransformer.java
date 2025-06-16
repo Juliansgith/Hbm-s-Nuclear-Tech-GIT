@@ -10,7 +10,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import org.objectweb.asm.Type;
 
 import net.minecraft.launchwrapper.IClassTransformer;
@@ -53,10 +53,10 @@ public class GlStateManagerClassTransformer implements IClassTransformer {
 		for (MethodNode method : profilerClass.methods) {
 			if (method.name.equals("disableLighting") || method.name.equals("func_179140_f")) {
 				
-				method.instructions.insert(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onLightingDisable", "()V", false));
+				//method.instructions.insert(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onLightingDisable", "()V", false));
 			}
 			if(method.name.equals("enableLighting") || method.name.equals("func_179145_e")){
-				method.instructions.insert(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onLightingEnable", "()V", false));
+				//method.instructions.insert(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onLightingEnable", "()V", false));
 			}
 			
 		}

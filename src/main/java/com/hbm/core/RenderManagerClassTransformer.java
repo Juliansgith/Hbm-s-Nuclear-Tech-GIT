@@ -12,7 +12,7 @@ import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import org.objectweb.asm.Type;
 
 import net.minecraft.launchwrapper.IClassTransformer;
@@ -56,8 +56,8 @@ public class RenderManagerClassTransformer implements IClassTransformer {
 			//I must have my mappings wrong or something, I see this as doRenderEntity
 			if (method.name.equals("renderEntity") || method.name.equals("func_188391_a")) {
 				
-				method.instructions.insert(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onEntityRender", "(Lnet/minecraft/entity/Entity;)V", false));
-				method.instructions.insert(new VarInsnNode(ALOAD, 1));
+				//method.instructions.insert(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "onEntityRender", "(Lnet/minecraft/entity/Entity;)V", false));
+				//method.instructions.insert(new VarInsnNode(ALOAD, 1));
 			}
 		}
 	}

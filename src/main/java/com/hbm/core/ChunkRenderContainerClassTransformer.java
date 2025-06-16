@@ -15,7 +15,7 @@ import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import org.objectweb.asm.Type;
 
 import net.minecraft.launchwrapper.IClassTransformer;
@@ -61,8 +61,8 @@ public class ChunkRenderContainerClassTransformer implements IClassTransformer {
 				AbstractInsnNode[] instructions = code.toArray();
 				for(AbstractInsnNode a : instructions){
 					if(a.getOpcode() == RETURN){
-						code.insertBefore(a, new VarInsnNode(ALOAD, 1));
-						code.insertBefore(a, new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "preRenderChunk", "(Lnet/minecraft/client/renderer/chunk/RenderChunk;)V", false));
+						//code.insertBefore(a, new VarInsnNode(ALOAD, 1));
+						//code.insertBefore(a, new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "preRenderChunk", "(Lnet/minecraft/client/renderer/chunk/RenderChunk;)V", false));
 						break;
 					}
 				}

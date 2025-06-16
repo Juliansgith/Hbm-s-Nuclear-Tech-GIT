@@ -2,7 +2,7 @@ package com.hbm.particle;
 
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -25,7 +25,7 @@ public class ParticleRadiationFog extends Particle {
         this.particleGreen = 0.8F;
         this.particleBlue = 0.8F;
         this.particleScale = 7.5F;
-        this.particleTexture = ModEventHandlerClient.fog;
+        //this.particleTexture = ModEventHandlerClient.fog;
 	}
 	
 	@Override

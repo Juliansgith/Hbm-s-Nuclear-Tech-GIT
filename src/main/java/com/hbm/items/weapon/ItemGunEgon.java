@@ -12,7 +12,7 @@ import com.hbm.items.ModItems;
 import com.hbm.lib.Library;
 import com.hbm.lib.ModDamageSource;
 import com.hbm.main.MainRegistry;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.main.ResourceManager;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.packet.PacketSpecialDeath;
@@ -83,8 +83,8 @@ public class ItemGunEgon extends ItemGunBase {
 				Random rand = world.rand;
 				float partialTicks = MainRegistry.proxy.partialTicks();
 				float[] offset = ItemRenderGunEgon.getOffset(player.world.getTotalWorldTime()+partialTicks);
-				float fovDiff = (ModEventHandlerClient.currentFOV-70)*0.0002F;
-				Vec3d start = new Vec3d(-0.18+offset[0]*0.075F-fovDiff, -0.2+offset[1]*0.1F, 0.5-fovDiff*30);
+				//float fovDiff = (ModEventHandlerClient.currentFOV-70)*0.0002F;
+				Vec3d start = new Vec3d(-0.18+offset[0]*0.075F/*-fovDiff*/, -0.2+offset[1]*0.1F, 0.5/*-fovDiff*30*/);
 				start = start.rotatePitch((float) Math.toRadians(-(player.prevRotationPitch + (player.rotationPitch - player.prevRotationPitch) * partialTicks)));
 				start = start.rotateYaw((float) Math.toRadians(-(player.prevRotationYaw + (player.rotationYaw - player.prevRotationYaw) * partialTicks)));
 
@@ -100,18 +100,19 @@ public class ItemGunEgon extends ItemGunBase {
 				
 				
 				if(Minecraft.getMinecraft().world.getTotalWorldTime() % 2 == 0){
-					ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4.1, 0, ResourceManager.gluon_muzzle_smoke, 10, 50, 9).color(0.2F, 0.4F+world.rand.nextFloat()*0.5F, 1F, 3F).lifetime(10));
+					//ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4.1, 0, ResourceManager.gluon_muzzle_smoke, 10, 50, 9).color(0.2F, 0.4F+world.rand.nextFloat()*0.5F, 1F, 3F).lifetime(10));
 				}
 				if(Minecraft.getMinecraft().world.getTotalWorldTime() % 4 == 0){
-					ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4, 1, ResourceManager.gluon_muzzle_glow, 30, 50, -1).color(0.2F, 0.4F+world.rand.nextFloat()*0.5F, 1F, 2F).lifetime(16));
+					//ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4, 1, ResourceManager.gluon_muzzle_glow, 30, 50, -1).color(0.2F, 0.4F+world.rand.nextFloat()*0.5F, 1F, 2F).lifetime(16));
 				}
 				
 				
 				if(activeTicks < 3){
-					for(int i = 0; i < 3; i ++)
-						ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4.1, 0, ResourceManager.gluon_muzzle_smoke, 10, 50, 25).color(0.2F, 0.4F, 1F, 3F).lifetime(7));
+					for(int i = 0; i < 3; i ++) {
+						//ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4.1, 0, ResourceManager.gluon_muzzle_smoke, 10, 50, 25).color(0.2F, 0.4F, 1F, 3F).lifetime(7));
+					}
 					if(activeTicks == 1){
-						ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4.1, 0, ResourceManager.flare, 10, 50, 25).color(0.2F, 0.4F, 1F, 3F).lifetime(7));
+						//ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleGluonMuzzleSmoke(world, 0, 0, 4.1, 0, ResourceManager.flare, 10, 50, 25).color(0.2F, 0.4F, 1F, 3F).lifetime(7));
 					}
 				}
 				

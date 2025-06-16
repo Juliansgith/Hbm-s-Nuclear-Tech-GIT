@@ -2,7 +2,7 @@ package com.hbm.particle;
 
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -114,7 +114,7 @@ public class ParticleSmokePlume extends Particle {
 	@Override
 	public void renderParticle(BufferBuilder buffer, Entity entityIn, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
 		
-		this.particleTexture = ModEventHandlerClient.contrail;
+		//this.particleTexture = ModEventHandlerClient.contrail;
 		float f = (float) this.particleTextureIndexX / 16.0F;
 		float f1 = f + 0.0624375F;
 		float f2 = (float) this.particleTextureIndexY / 16.0F;

@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 import com.hbm.items.weapon.ItemGunEgon;
 import com.hbm.lib.Library;
 import com.hbm.main.MainRegistry;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.main.ResourceManager;
 import com.hbm.particle.gluon.ParticleGluonMuzzleSmoke;
 import com.hbm.render.item.TEISRBase;
@@ -90,18 +90,18 @@ public class ItemRenderGunEgon extends TEISRBase {
 			Tessellator.getInstance().getBuffer().begin(GL11.GL_QUADS, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
 			Minecraft.getMinecraft().getTextureManager().bindTexture(ResourceManager.gluon_muzzle_smoke);
 			GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
-			for(Particle p : ModEventHandlerClient.firstPersonAuxParticles){
-				if(p instanceof ParticleGluonMuzzleSmoke && ((ParticleGluonMuzzleSmoke) p).tex == ResourceManager.gluon_muzzle_smoke)
-					p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
-			}
+			//for(Particle p : ModEventHandlerClient.firstPersonAuxParticles){
+			//	if(p instanceof ParticleGluonMuzzleSmoke && ((ParticleGluonMuzzleSmoke) p).tex == ResourceManager.gluon_muzzle_smoke)
+			//		p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
+			//}
 			Tessellator.getInstance().draw();
 			Minecraft.getMinecraft().getTextureManager().bindTexture(ResourceManager.gluon_muzzle_glow);
 			GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
 			Tessellator.getInstance().getBuffer().begin(GL11.GL_QUADS, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
-			for(Particle p : ModEventHandlerClient.firstPersonAuxParticles){
-				if(p instanceof ParticleGluonMuzzleSmoke && ((ParticleGluonMuzzleSmoke) p).tex == ResourceManager.gluon_muzzle_glow)
-					p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
-			}
+			//for(Particle p : ModEventHandlerClient.firstPersonAuxParticles){
+			//	if(p instanceof ParticleGluonMuzzleSmoke && ((ParticleGluonMuzzleSmoke) p).tex == ResourceManager.gluon_muzzle_glow)
+			//		p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
+			//}
 			Tessellator.getInstance().draw();
 			GlStateManager.enableAlpha();
 	        GlStateManager.depthMask(true);

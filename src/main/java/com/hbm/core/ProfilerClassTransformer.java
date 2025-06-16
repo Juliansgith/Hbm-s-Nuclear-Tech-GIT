@@ -13,7 +13,7 @@ import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import org.objectweb.asm.Type;
 
 import net.minecraft.launchwrapper.IClassTransformer;
@@ -55,11 +55,11 @@ public class ProfilerClassTransformer implements IClassTransformer {
 
 		for (MethodNode method : profilerClass.methods) {
 			if ((method.name.equals("endStartSection") || method.name.equals("func_76318_c")) && method.desc.equals("(Ljava/lang/String;)V")) {
-				InsnList toInsert = new InsnList();
-				toInsert.add(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "profilerStart", "(Ljava/lang/String;)V", false));
+				//InsnList toInsert = new InsnList();
+				//toInsert.add(new MethodInsnNode(INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "profilerStart", "(Ljava/lang/String;)V", false));
 				
-				method.instructions.insertBefore(method.instructions.get(2), toInsert);
-				method.instructions.insertBefore(method.instructions.get(2), new VarInsnNode(ALOAD, 1));
+				//method.instructions.insertBefore(method.instructions.get(2), toInsert);
+				//method.instructions.insertBefore(method.instructions.get(2), new VarInsnNode(ALOAD, 1));
 			}
 		}
 	}

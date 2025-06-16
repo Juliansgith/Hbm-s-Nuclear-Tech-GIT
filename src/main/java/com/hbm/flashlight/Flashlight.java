@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
 import com.hbm.handler.HbmShaderManager;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.portals.DummyRenderEntity;
 
 import glmath.glm.mat._3.Mat3;
@@ -105,7 +105,7 @@ public class Flashlight {
         long k = System.nanoTime() - System.nanoTime();
         long l = Math.max((long)(1000000000 / j / 4) - k, 0L);
 		
-        ModEventHandlerClient.renderingDepthOnly = true;
+        //ModEventHandlerClient.renderingDepthOnly = true;
         
         bindBuffer();
         GL11.glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
@@ -116,7 +116,7 @@ public class Flashlight {
         
         Minecraft.getMinecraft().getFramebuffer().bindFramebuffer(true);
         
-        ModEventHandlerClient.renderingDepthOnly = false;
+        //ModEventHandlerClient.renderingDepthOnly = false;
 		Minecraft.getMinecraft().setRenderViewEntity(ent);
 		
 	}

@@ -6,7 +6,7 @@ import com.hbm.items.weapon.ItemGunGauss;
 import com.hbm.lib.RefStrings;
 import com.hbm.main.ClientProxy;
 import com.hbm.main.MainRegistry;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.particle.ParticleFirstPerson.ParticleType;
 import com.hbm.particle.ParticleFirstPerson;
 import com.hbm.render.anim.HbmAnimations;
@@ -70,10 +70,10 @@ public class ItemRenderXVL1456 extends TEISRBase {
 			ClientProxy.AUX_GL_BUFFER.put(13, ClientProxy.AUX_GL_BUFFER2.get(13));
 			ClientProxy.AUX_GL_BUFFER.put(14, ClientProxy.AUX_GL_BUFFER2.get(14));
 			GL11.glLoadMatrix(ClientProxy.AUX_GL_BUFFER2);
-			for(ParticleFirstPerson p : ModEventHandlerClient.firstPersonAuxParticles){
-				if(p.getType() == ParticleType.TAU)
-				p.renderParticle(Tessellator.getInstance().getBuffer(), null, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
-			}
+			//for(ParticleFirstPerson p : ModEventHandlerClient.firstPersonAuxParticles){
+			//	if(p.getType() == ParticleType.TAU)
+			//	p.renderParticle(Tessellator.getInstance().getBuffer(), null, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
+			//}
 			break;
 		case THIRD_PERSON_RIGHT_HAND:
 		case THIRD_PERSON_LEFT_HAND:

@@ -3,7 +3,7 @@ package com.hbm.particle_instanced;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -17,7 +17,7 @@ public class ParticleRocketFlameInstanced extends ParticleInstanced {
 	public ParticleRocketFlameInstanced(World worldIn, double posXIn, double posYIn, double posZIn) {
 		super(worldIn, posXIn, posYIn, posZIn);
 		maxAge = 300 + rand.nextInt(50);
-		this.particleTexture = ModEventHandlerClient.particle_base;
+		//this.particleTexture = ModEventHandlerClient.particle_base;
 		initVals(worldIn.rand.nextInt());
 	}
 	

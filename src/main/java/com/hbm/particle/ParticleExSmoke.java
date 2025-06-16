@@ -2,7 +2,7 @@ package com.hbm.particle;
 
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -22,7 +22,7 @@ public class ParticleExSmoke extends Particle {
 		super(worldIn, posXIn, posYIn, posZIn);
 		maxAge = 100 + rand.nextInt(40);
 		randomSeed = worldIn.rand.nextInt();
-		this.setParticleTexture(ModEventHandlerClient.contrail);
+		//this.setParticleTexture(ModEventHandlerClient.contrail);
 	}
 	
 	public void setMotion(double x, double y, double z){

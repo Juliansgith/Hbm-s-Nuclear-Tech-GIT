@@ -8,7 +8,7 @@ import com.google.common.collect.Multimap;
 import com.hbm.config.GeneralConfig;
 import com.hbm.interfaces.IPostRender;
 import com.hbm.lib.HBMSoundHandler;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.packet.AuxButtonPacket;
 import com.hbm.packet.AuxParticlePacketNT;
 import com.hbm.packet.PacketDispatcher;
@@ -123,7 +123,7 @@ public class ItemCrucible extends ItemSwordCutter implements IPostRender {
 			}
 		}
 		if(flag && w.rand.nextInt(20) == 0){
-			ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleCrucibleLightning(w, 0, (w.rand.nextFloat()-0.5F)*0.2F, 0.7F-w.rand.nextFloat()*0.25F).lifetime(10));
+			//ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleCrucibleLightning(w, 0, (w.rand.nextFloat()-0.5F)*0.2F, 0.7F-w.rand.nextFloat()*0.25F).lifetime(10));
 		}
 	}
 	

@@ -3,7 +3,7 @@ package com.hbm.particle_instanced;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.world.World;
 
@@ -16,7 +16,7 @@ public class ParticleExSmokeInstanced extends ParticleInstanced {
 	public ParticleExSmokeInstanced(World worldIn, double posXIn, double posYIn, double posZIn) {
 		super(worldIn, posXIn, posYIn, posZIn);
 		maxAge = 100 + rand.nextInt(40);
-		this.particleTexture = ModEventHandlerClient.contrail;
+		//this.particleTexture = ModEventHandlerClient.contrail;
 		initVals(worldIn.rand.nextInt());
 	}
 	

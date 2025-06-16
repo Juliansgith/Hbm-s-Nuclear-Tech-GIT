@@ -12,7 +12,7 @@ import com.hbm.handler.HbmShaderManager2;
 import com.hbm.items.weapon.ItemCrucible;
 import com.hbm.items.weapon.ItemSwordCutter;
 import com.hbm.main.MainRegistry;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.main.ResourceManager;
 import com.hbm.particle.ParticleCrucibleSpark;
 import com.hbm.particle.ParticleFirstPerson;
@@ -124,8 +124,8 @@ public class ItemRenderCrucible extends TEISRBase {
 							if(currentFrame <= 20)
 								for(int f : particleFrames){
 									if(currentFrame >= f && prevFrame < f){
-										for(int i = 0; i < 50; i ++)
-											ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleCrucibleSpark(world, 2, 0.0025F, 0, (world.rand.nextFloat()-0.5F)*0.2F, 0.6F-world.rand.nextFloat()*0.75F, 0, 0, -0.01F*world.rand.nextFloat()).lifetime(6+(int)world.rand.nextGaussian()*10));
+										//for(int i = 0; i < 50; i ++)
+											//ModEventHandlerClient.firstPersonAuxParticles.add(new ParticleCrucibleSpark(world, 2, 0.0025F, 0, (world.rand.nextFloat()-0.5F)*0.2F, 0.6F-world.rand.nextFloat()*0.75F, 0, 0, -0.01F*world.rand.nextFloat()).lifetime(6+(int)world.rand.nextGaussian()*10));
 									}
 								}
 							
@@ -141,20 +141,20 @@ public class ItemRenderCrucible extends TEISRBase {
 							GlStateManager.color(1, 0.5F, 0.5F, 1);
 							TrailRenderer2.color[1] = 0.5F;
 							TrailRenderer2.color[2] = 0.5F;
-							for(ParticleFirstPerson p : ModEventHandlerClient.firstPersonAuxParticles){
-								if(p.getType() == ParticleType.CRUCIBLE)
-									p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
-							}
+							//for(ParticleFirstPerson p : ModEventHandlerClient.firstPersonAuxParticles){
+							//	if(p.getType() == ParticleType.CRUCIBLE)
+							//		p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
+							//}
 							GlStateManager.color(1, 0.2F, 0.2F, 1);
 							TrailRenderer2.color[1] = 0.2F;
 							TrailRenderer2.color[2] = 0.2F;
 							TrailRenderer2.color[3] = 0.5F;
 							if(GeneralConfig.bloom){
 								HbmShaderManager2.bloomData.bindFramebuffer(true);
-								for(ParticleFirstPerson p : ModEventHandlerClient.firstPersonAuxParticles){
-									if(p.getType() == ParticleType.CRUCIBLE)
-										p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
-								}
+								//for(ParticleFirstPerson p : ModEventHandlerClient.firstPersonAuxParticles){
+								//	if(p.getType() == ParticleType.CRUCIBLE)
+								//		p.renderParticle(Tessellator.getInstance().getBuffer(), entity, MainRegistry.proxy.partialTicks(), 0, 0, 0, 0, 0);
+								//}
 								
 								Minecraft.getMinecraft().getFramebuffer().bindFramebuffer(true);
 							}

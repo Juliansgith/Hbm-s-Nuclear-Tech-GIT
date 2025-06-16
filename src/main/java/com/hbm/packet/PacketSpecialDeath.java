@@ -9,7 +9,7 @@ import org.lwjgl.util.vector.Matrix4f;
 
 import com.hbm.lib.ModDamageSource;
 import com.hbm.main.MainRegistry;
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 import com.hbm.main.ResourceManager;
 import com.hbm.particle.DisintegrationParticleHandler;
 import com.hbm.particle.ParticleBlood;
@@ -100,7 +100,7 @@ public class PacketSpecialDeath implements IMessage {
 					switch(m.effectId){
 					case 0:
 						ent.setDead();
-						ModEventHandlerClient.specialDeathEffectEntities.add((EntityLivingBase) ent);
+						//ModEventHandlerClient.specialDeathEffectEntities.add((EntityLivingBase) ent);
 						DisintegrationParticleHandler.spawnGluonDisintegrateParticles(ent);
 						break;
 					case 1:
@@ -116,7 +116,7 @@ public class PacketSpecialDeath implements IMessage {
 						break;
 					case 2:
 						ent.setDead();
-						ModEventHandlerClient.specialDeathEffectEntities.add((EntityLivingBase) ent);
+						//ModEventHandlerClient.specialDeathEffectEntities.add((EntityLivingBase) ent);
 						DisintegrationParticleHandler.spawnLightningDisintegrateParticles(ent, new Vec3(m.auxData[0], m.auxData[1], m.auxData[2]));
 						break;
 					case 3:

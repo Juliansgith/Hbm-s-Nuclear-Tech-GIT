@@ -15,7 +15,7 @@ import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.launchwrapper.IClassTransformer;
 
@@ -65,23 +65,23 @@ public class EntityRendererTransformer implements IClassTransformer {
 						System.out.println(method.desc);
 						System.out.println(method.instructions.get(i-1));
 						
-						inject.add(new VarInsnNode(Opcodes.FLOAD, 12));
-						inject.add(new VarInsnNode(Opcodes.FLOAD, 12));
-						inject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "getRLightmapColor", "(F)F", false));
-						inject.add(new InsnNode(Opcodes.FADD));
-						inject.add(new VarInsnNode(Opcodes.FSTORE, 12));
+						//inject.add(new VarInsnNode(Opcodes.FLOAD, 12));
+						//inject.add(new VarInsnNode(Opcodes.FLOAD, 12));
+						//inject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "getRLightmapColor", "(F)F", false));
+						//inject.add(new InsnNode(Opcodes.FADD));
+						//inject.add(new VarInsnNode(Opcodes.FSTORE, 12));
 						
-						inject.add(new VarInsnNode(Opcodes.FLOAD, 13));
-						inject.add(new VarInsnNode(Opcodes.FLOAD, 13));
-						inject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "getGLightmapColor", "(F)F", false));
-						inject.add(new InsnNode(Opcodes.FADD));
-						inject.add(new VarInsnNode(Opcodes.FSTORE, 13));
+						//inject.add(new VarInsnNode(Opcodes.FLOAD, 13));
+						//inject.add(new VarInsnNode(Opcodes.FLOAD, 13));
+						//inject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "getGLightmapColor", "(F)F", false));
+						//inject.add(new InsnNode(Opcodes.FADD));
+						//inject.add(new VarInsnNode(Opcodes.FSTORE, 13));
 						
-						inject.add(new VarInsnNode(Opcodes.FLOAD, 14));
-						inject.add(new VarInsnNode(Opcodes.FLOAD, 14));
-						inject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "getBLightmapColor", "(F)F", false));
-						inject.add(new InsnNode(Opcodes.FADD));
-						inject.add(new VarInsnNode(Opcodes.FSTORE, 14));
+						//inject.add(new VarInsnNode(Opcodes.FLOAD, 14));
+						//inject.add(new VarInsnNode(Opcodes.FLOAD, 14));
+						//inject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, Type.getInternalName(ModEventHandlerClient.class), "getBLightmapColor", "(F)F", false));
+						//inject.add(new InsnNode(Opcodes.FADD));
+						//inject.add(new VarInsnNode(Opcodes.FSTORE, 14));
 						
 						method.instructions.insert(insn, inject);
 						break;

@@ -2,7 +2,7 @@ package com.hbm.particle;
 
 import java.util.Random;
 
-import com.hbm.main.ModEventHandlerClient;
+//import com.hbm.main.ModEventHandlerClient;
 
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -22,7 +22,7 @@ public class ParticleRocketFlame extends Particle {
 	public ParticleRocketFlame(World worldIn, double posXIn, double posYIn, double posZIn) {
 		super(worldIn, posXIn, posYIn, posZIn);
 		maxAge = 300 + rand.nextInt(50);
-		this.particleTexture = ModEventHandlerClient.particle_base;
+		//this.particleTexture = ModEventHandlerClient.particle_base;
 		this.randSeed = worldIn.rand.nextInt();
 	}
 	
