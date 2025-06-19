@@ -238,8 +238,8 @@ public class ItemClip extends Item {
 			//if(Library.hasInventoryItem(player.inventory, ModItems.gun_lacunae)) {
 			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
 			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
-			}
+			//	ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_5mm, 64));
+			//}
 			if(Library.hasInventoryItem(player.inventory, ModItems.gun_rpg))
 				ItemSimpleConsumable.tryAddItem(player, new ItemStack(ModItems.ammo_rocket, 3));
 			if(Library.hasInventoryItem(player.inventory, ModItems.gun_stinger))
