@@ -2241,7 +2241,6 @@ public class ClientProxy extends ServerProxy {
 		ModItems.gun_cryolator.setTileEntityItemStackRenderer(new ItemRenderCryolator());
 		ModItems.gun_jack.setTileEntityItemStackRenderer(new ItemRenderGunJack());
 		ModItems.gun_immolator.setTileEntityItemStackRenderer(new ItemRenderImmolator());
-		ModItems.gun_osipr.setTileEntityItemStackRenderer(new ItemRenderOSIPR());
 		ModItems.gun_emp.setTileEntityItemStackRenderer(new ItemRenderEMPRay());
 		ModItems.gun_revolver_inverted.setTileEntityItemStackRenderer(new ItemRenderRevolverInverted());
 		ModItems.gun_lever_action_sonata.setTileEntityItemStackRenderer(new ItemRenderGunSonata());

@@ -60,9 +60,6 @@ public class GunOSIPR extends Item {
 		if(!(player1 instanceof EntityPlayer))
 			return;
 		EntityPlayer player = (EntityPlayer) player1;
-		if(player.getHeldItemMainhand() == stack && player.getHeldItemOffhand().getItem() == ModItems.gun_osipr){
-			player.getHeldItemOffhand().getItem().onUsingTick(player.getHeldItemOffhand(), player, count);
-		}
 		World world = player.world;
 		
 		if (!player.isSneaking()) {
