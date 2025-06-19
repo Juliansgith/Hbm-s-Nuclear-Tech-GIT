@@ -120,7 +120,7 @@ public class TestDungeonRoom8 extends CellularDungeonRoom {
 	public static String[] generatePages(int r, World world) {
 		
 		String[] orig;
-		Item ingred;	
+		Item ingred = null;
 
 		if(r == 0) {
 			orig = bookIodine;
